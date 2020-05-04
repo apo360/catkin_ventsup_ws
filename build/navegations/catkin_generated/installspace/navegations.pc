@@ -1,0 +1,8 @@
+prefix=/home/apolinario/catkin_ventsup_ws/install
+
+Name: navegations
+Description: Description of navegations
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

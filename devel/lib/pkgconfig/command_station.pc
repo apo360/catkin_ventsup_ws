@@ -1,0 +1,8 @@
+prefix=/home/apolinario/catkin_ventsup_ws/devel
+
+Name: command_station
+Description: Description of command_station
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,5 @@
+_ctest_serial_gtest_serial-test 0 0
+_ctest_serial_gtest_serial-test-timer 0 0
+---
+_ctest_serial_gtest_serial-test
+_ctest_serial_gtest_serial-test-timer

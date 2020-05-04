@@ -1,0 +1,43 @@
+Start testing: Mar 08 11:21 WET
+----------------------------------------------------------
+1/2 Testing: _ctest_serial_gtest_serial-test
+1/2 Test: _ctest_serial_gtest_serial-test
+Command: "/home/apolinario/catkin_ventsup_ws/build/catkin_generated/env_cached.sh" "/usr/bin/python2" "/opt/ros/melodic/share/catkin/cmake/test/run_tests.py" "/home/apolinario/catkin_ventsup_ws/build/test_results/serial/gtest-serial-test.xml" "--return-code" "/home/apolinario/catkin_ventsup_ws/devel/lib/serial/serial-test --gtest_output=xml:/home/apolinario/catkin_ventsup_ws/build/test_results/serial/gtest-serial-test.xml"
+Directory: /home/apolinario/catkin_ventsup_ws/build/serial/tests
+"_ctest_serial_gtest_serial-test" start time: Mar 08 11:21 WET
+Output:
+----------------------------------------------------------
+/bin/sh: 1: /home/apolinario/catkin_ventsup_ws/devel/lib/serial/serial-test: not found
+Cannot find results, writing failure results to '/home/apolinario/catkin_ventsup_ws/build/test_results/serial/MISSING-gtest-serial-test.xml'
+-- run_tests.py: execute commands
+  /home/apolinario/catkin_ventsup_ws/devel/lib/serial/serial-test --gtest_output=xml:/home/apolinario/catkin_ventsup_ws/build/test_results/serial/gtest-serial-test.xml
+-- run_tests.py: verify result "/home/apolinario/catkin_ventsup_ws/build/test_results/serial/gtest-serial-test.xml"
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Failed.
+"_ctest_serial_gtest_serial-test" end time: Mar 08 11:21 WET
+"_ctest_serial_gtest_serial-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: _ctest_serial_gtest_serial-test-timer
+2/2 Test: _ctest_serial_gtest_serial-test-timer
+Command: "/home/apolinario/catkin_ventsup_ws/build/catkin_generated/env_cached.sh" "/usr/bin/python2" "/opt/ros/melodic/share/catkin/cmake/test/run_tests.py" "/home/apolinario/catkin_ventsup_ws/build/test_results/serial/gtest-serial-test-timer.xml" "--return-code" "/home/apolinario/catkin_ventsup_ws/devel/lib/serial/serial-test-timer --gtest_output=xml:/home/apolinario/catkin_ventsup_ws/build/test_results/serial/gtest-serial-test-timer.xml"
+Directory: /home/apolinario/catkin_ventsup_ws/build/serial/tests
+"_ctest_serial_gtest_serial-test-timer" start time: Mar 08 11:21 WET
+Output:
+----------------------------------------------------------
+/bin/sh: 1: /home/apolinario/catkin_ventsup_ws/devel/lib/serial/serial-test-timer: not found
+Cannot find results, writing failure results to '/home/apolinario/catkin_ventsup_ws/build/test_results/serial/MISSING-gtest-serial-test-timer.xml'
+-- run_tests.py: execute commands
+  /home/apolinario/catkin_ventsup_ws/devel/lib/serial/serial-test-timer --gtest_output=xml:/home/apolinario/catkin_ventsup_ws/build/test_results/serial/gtest-serial-test-timer.xml
+-- run_tests.py: verify result "/home/apolinario/catkin_ventsup_ws/build/test_results/serial/gtest-serial-test-timer.xml"
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Failed.
+"_ctest_serial_gtest_serial-test-timer" end time: Mar 08 11:21 WET
+"_ctest_serial_gtest_serial-test-timer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 08 11:21 WET

@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/gps.dir/navigation/gps.cpp.o  -o /home/apolinario/catkin_ventsup_ws/devel/lib/serial/gps -Wl,-rpath,/home/apolinario/catkin_ventsup_ws/devel/lib /home/apolinario/catkin_ventsup_ws/devel/lib/libserial.so -lrt -lpthread 

@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/rs232.dir/src/rs232.cpp.o  -o /home/apolinario/catkin_ventsup_ws/devel/lib/serial/rs232 -Wl,-rpath,/home/apolinario/catkin_ventsup_ws/devel/lib /home/apolinario/catkin_ventsup_ws/devel/lib/libserial.so -lrt -lpthread 

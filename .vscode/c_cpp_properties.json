@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/opt/ros/melodic/include",
+                "/home/apolinario/catkin_ventsup_ws/src/beginner_tutorials/include",
+                "/home/apolinario/catkin_ventsup_ws/src/comunication/include",
+                "/home/apolinario/catkin_ventsup_ws/src/navegations/include",
+                "/home/apolinario/catkin_ventsup_ws/src/ethernet/include",
+                "/home/apolinario/catkin_ventsup_ws/src/serial/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

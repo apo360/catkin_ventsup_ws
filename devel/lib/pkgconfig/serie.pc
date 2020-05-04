@@ -1,0 +1,8 @@
+prefix=/home/apolinario/catkin_ventsup_ws/devel
+
+Name: serie
+Description: Description of serie
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
