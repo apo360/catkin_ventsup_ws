@@ -309,6 +309,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "command_station/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake"
   "comunication/CMakeFiles/topic_lora_receiver.dir/DependInfo.cmake"
   "comunication/CMakeFiles/lora_send.dir/DependInfo.cmake"
+  "ethernet/CMakeFiles/socket_server.dir/DependInfo.cmake"
   "navegations/CMakeFiles/imu_node.dir/DependInfo.cmake"
   "navegations/CMakeFiles/status_device_node.dir/DependInfo.cmake"
   "navegations/CMakeFiles/gps_node.dir/DependInfo.cmake"

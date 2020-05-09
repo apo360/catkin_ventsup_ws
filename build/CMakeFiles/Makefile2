@@ -1312,7 +1312,7 @@ clean: beginner_tutorials/CMakeFiles/beginner_tutorials_genpy.dir/clean
 beginner_tutorials/CMakeFiles/talker.dir/all: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/all
 	$(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/depend
 	$(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/apolinario/catkin_ventsup_ws/build/CMakeFiles --progress-num=43,44 "Built target talker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/apolinario/catkin_ventsup_ws/build/CMakeFiles --progress-num=45,46 "Built target talker"
 .PHONY : beginner_tutorials/CMakeFiles/talker.dir/all
 
 # Include target in all.
@@ -2005,7 +2005,7 @@ comunication/preinstall:
 comunication/CMakeFiles/topic_lora_receiver.dir/all: serial/CMakeFiles/serial.dir/all
 	$(MAKE) -f comunication/CMakeFiles/topic_lora_receiver.dir/build.make comunication/CMakeFiles/topic_lora_receiver.dir/depend
 	$(MAKE) -f comunication/CMakeFiles/topic_lora_receiver.dir/build.make comunication/CMakeFiles/topic_lora_receiver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/apolinario/catkin_ventsup_ws/build/CMakeFiles --progress-num=45,46 "Built target topic_lora_receiver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/apolinario/catkin_ventsup_ws/build/CMakeFiles --progress-num=47,48 "Built target topic_lora_receiver"
 .PHONY : comunication/CMakeFiles/topic_lora_receiver.dir/all
 
 # Include target in all.
@@ -2076,12 +2076,12 @@ clean: comunication/CMakeFiles/lora_send.dir/clean
 # Directory level rules for directory ethernet
 
 # Convenience name for "all" pass in the directory.
-ethernet/all:
+ethernet/all: ethernet/CMakeFiles/socket_server.dir/all
 
 .PHONY : ethernet/all
 
 # Convenience name for "clean" pass in the directory.
-ethernet/clean:
+ethernet/clean: ethernet/CMakeFiles/socket_server.dir/clean
 
 .PHONY : ethernet/clean
 
@@ -2089,6 +2089,43 @@ ethernet/clean:
 ethernet/preinstall:
 
 .PHONY : ethernet/preinstall
+
+#=============================================================================
+# Target rules for target ethernet/CMakeFiles/socket_server.dir
+
+# All Build rule for target.
+ethernet/CMakeFiles/socket_server.dir/all: serial/CMakeFiles/serial.dir/all
+	$(MAKE) -f ethernet/CMakeFiles/socket_server.dir/build.make ethernet/CMakeFiles/socket_server.dir/depend
+	$(MAKE) -f ethernet/CMakeFiles/socket_server.dir/build.make ethernet/CMakeFiles/socket_server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/apolinario/catkin_ventsup_ws/build/CMakeFiles --progress-num=41,42 "Built target socket_server"
+.PHONY : ethernet/CMakeFiles/socket_server.dir/all
+
+# Include target in all.
+all: ethernet/CMakeFiles/socket_server.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+ethernet/CMakeFiles/socket_server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/apolinario/catkin_ventsup_ws/build/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 ethernet/CMakeFiles/socket_server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/apolinario/catkin_ventsup_ws/build/CMakeFiles 0
+.PHONY : ethernet/CMakeFiles/socket_server.dir/rule
+
+# Convenience name for target.
+socket_server: ethernet/CMakeFiles/socket_server.dir/rule
+
+.PHONY : socket_server
+
+# clean rule for target.
+ethernet/CMakeFiles/socket_server.dir/clean:
+	$(MAKE) -f ethernet/CMakeFiles/socket_server.dir/build.make ethernet/CMakeFiles/socket_server.dir/clean
+.PHONY : ethernet/CMakeFiles/socket_server.dir/clean
+
+# clean rule for target.
+clean: ethernet/CMakeFiles/socket_server.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Directory level rules for directory navegations
@@ -2156,7 +2193,7 @@ clean: navegations/CMakeFiles/imu_node.dir/clean
 navegations/CMakeFiles/status_device_node.dir/all: serial/CMakeFiles/serial.dir/all
 	$(MAKE) -f navegations/CMakeFiles/status_device_node.dir/build.make navegations/CMakeFiles/status_device_node.dir/depend
 	$(MAKE) -f navegations/CMakeFiles/status_device_node.dir/build.make navegations/CMakeFiles/status_device_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/apolinario/catkin_ventsup_ws/build/CMakeFiles --progress-num=41,42 "Built target status_device_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/apolinario/catkin_ventsup_ws/build/CMakeFiles --progress-num=43,44 "Built target status_device_node"
 .PHONY : navegations/CMakeFiles/status_device_node.dir/all
 
 # Include target in all.
@@ -2287,7 +2324,7 @@ clean: serie/CMakeFiles/read_rs232.dir/clean
 serie/CMakeFiles/write_rs232.dir/all: serial/CMakeFiles/serial.dir/all
 	$(MAKE) -f serie/CMakeFiles/write_rs232.dir/build.make serie/CMakeFiles/write_rs232.dir/depend
 	$(MAKE) -f serie/CMakeFiles/write_rs232.dir/build.make serie/CMakeFiles/write_rs232.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/apolinario/catkin_ventsup_ws/build/CMakeFiles --progress-num=47,48 "Built target write_rs232"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/apolinario/catkin_ventsup_ws/build/CMakeFiles --progress-num=49,50 "Built target write_rs232"
 .PHONY : serie/CMakeFiles/write_rs232.dir/all
 
 # Include target in all.

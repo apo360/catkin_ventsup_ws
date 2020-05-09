@@ -883,6 +883,19 @@ lora_send/fast:
 .PHONY : lora_send/fast
 
 #=============================================================================
+# Target rules for targets named socket_server
+
+# Build rule for target.
+socket_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 socket_server
+.PHONY : socket_server
+
+# fast build rule for target.
+socket_server/fast:
+	$(MAKE) -f ethernet/CMakeFiles/socket_server.dir/build.make ethernet/CMakeFiles/socket_server.dir/build
+.PHONY : socket_server/fast
+
+#=============================================================================
 # Target rules for targets named imu_node
 
 # Build rule for target.
@@ -1015,6 +1028,7 @@ help:
 	@echo "... _catkin_empty_exported_target"
 	@echo "... topic_lora_receiver"
 	@echo "... lora_send"
+	@echo "... socket_server"
 	@echo "... imu_node"
 	@echo "... status_device_node"
 	@echo "... gps_node"

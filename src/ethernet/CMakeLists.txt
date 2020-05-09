@@ -122,6 +122,10 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+add_executable(socket_server src/socket_server.cpp)
+target_link_libraries(socket_server ${catkin_LIBRARIES})
+add_dependencies(socket_server ethernet_generate_messages_cpp)
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/ethernet.cpp
