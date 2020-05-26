@@ -399,6 +399,8 @@ message_runtime_DIR:PATH=/opt/ros/melodic/share/message_runtime/cmake
 //Value Computed by CMake
 navegations_BINARY_DIR:STATIC=/home/apolinario/catkin_ventsup_ws/build/navegations
 
+navegations_DIR:PATH=
+
 //Value Computed by CMake
 navegations_SOURCE_DIR:STATIC=/home/apolinario/catkin_ventsup_ws/src/navegations
 

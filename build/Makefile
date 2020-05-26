@@ -935,6 +935,19 @@ gps_node/fast:
 .PHONY : gps_node/fast
 
 #=============================================================================
+# Target rules for targets named planning
+
+# Build rule for target.
+planning: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 planning
+.PHONY : planning
+
+# fast build rule for target.
+planning/fast:
+	$(MAKE) -f navegations/CMakeFiles/planning.dir/build.make navegations/CMakeFiles/planning.dir/build
+.PHONY : planning/fast
+
+#=============================================================================
 # Target rules for targets named read_rs232
 
 # Build rule for target.
@@ -1032,6 +1045,7 @@ help:
 	@echo "... imu_node"
 	@echo "... status_device_node"
 	@echo "... gps_node"
+	@echo "... planning"
 	@echo "... read_rs232"
 	@echo "... write_rs232"
 .PHONY : help

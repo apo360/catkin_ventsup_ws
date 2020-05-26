@@ -8,6 +8,7 @@ project(navegations)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  navegations
   ethernet
   message_generation
   message_runtime
@@ -65,11 +66,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+   add_service_files(
+    FILES
+    AddWpn.srv
+   )
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -142,6 +142,10 @@ add_dependencies(imu_node navegations_generate_messages_cpp)
 add_executable(status_device_node src/status_device_node.cpp)
 target_link_libraries(status_device_node ${catkin_LIBRARIES})
 add_dependencies(status_device_node navegations_generate_messages_cpp)
+
+add_executable(planning src/planning.cpp)
+target_link_libraries(planning ${catkin_LIBRARIES})
+add_dependencies(planning navegations_generate_messages_cpp)
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}

@@ -55,9 +55,9 @@ class ReadImu{
         reverse(str.begin(), str.end());
         while(!str.empty())
         {
-            ret.push_back(str.substr(i, str.find(delimiter)));
-            str.erase(0,str.find(delimiter));
-            while(!(str.empty()) && (str[0] == delimiter)) {str.erase(0,1);}
+          ret.push_back(str.substr(i, str.find(delimiter)));
+          str.erase(0,str.find(delimiter));
+          while(!(str.empty()) && (str[0] == delimiter)) {str.erase(0,1);}
         }
         return ret;
     }

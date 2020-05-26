@@ -90,6 +90,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -123,17 +134,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -212,6 +212,21 @@ gps_node/fast:
 	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f navegations/CMakeFiles/gps_node.dir/build.make navegations/CMakeFiles/gps_node.dir/build
 .PHONY : gps_node/fast
 
+# Convenience name for target.
+navegations/CMakeFiles/planning.dir/rule:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navegations/CMakeFiles/planning.dir/rule
+.PHONY : navegations/CMakeFiles/planning.dir/rule
+
+# Convenience name for target.
+planning: navegations/CMakeFiles/planning.dir/rule
+
+.PHONY : planning
+
+# fast build rule for target.
+planning/fast:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f navegations/CMakeFiles/planning.dir/build.make navegations/CMakeFiles/planning.dir/build
+.PHONY : planning/fast
+
 src/gps_node.o: src/gps_node.cpp.o
 
 .PHONY : src/gps_node.o
@@ -266,6 +281,33 @@ src/imu_node.cpp.s:
 	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f navegations/CMakeFiles/imu_node.dir/build.make navegations/CMakeFiles/imu_node.dir/src/imu_node.cpp.s
 .PHONY : src/imu_node.cpp.s
 
+src/planning.o: src/planning.cpp.o
+
+.PHONY : src/planning.o
+
+# target to build an object file
+src/planning.cpp.o:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f navegations/CMakeFiles/planning.dir/build.make navegations/CMakeFiles/planning.dir/src/planning.cpp.o
+.PHONY : src/planning.cpp.o
+
+src/planning.i: src/planning.cpp.i
+
+.PHONY : src/planning.i
+
+# target to preprocess a source file
+src/planning.cpp.i:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f navegations/CMakeFiles/planning.dir/build.make navegations/CMakeFiles/planning.dir/src/planning.cpp.i
+.PHONY : src/planning.cpp.i
+
+src/planning.s: src/planning.cpp.s
+
+.PHONY : src/planning.s
+
+# target to generate assembly for a file
+src/planning.cpp.s:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f navegations/CMakeFiles/planning.dir/build.make navegations/CMakeFiles/planning.dir/src/planning.cpp.s
+.PHONY : src/planning.cpp.s
+
 src/status_device_node.o: src/status_device_node.cpp.o
 
 .PHONY : src/status_device_node.o
@@ -305,16 +347,20 @@ help:
 	@echo "... imu_node"
 	@echo "... status_device_node"
 	@echo "... gps_node"
+	@echo "... rebuild_cache"
+	@echo "... planning"
 	@echo "... install/local"
 	@echo "... test"
 	@echo "... edit_cache"
-	@echo "... rebuild_cache"
 	@echo "... src/gps_node.o"
 	@echo "... src/gps_node.i"
 	@echo "... src/gps_node.s"
 	@echo "... src/imu_node.o"
 	@echo "... src/imu_node.i"
 	@echo "... src/imu_node.s"
+	@echo "... src/planning.o"
+	@echo "... src/planning.i"
+	@echo "... src/planning.s"
 	@echo "... src/status_device_node.o"
 	@echo "... src/status_device_node.i"
 	@echo "... src/status_device_node.s"

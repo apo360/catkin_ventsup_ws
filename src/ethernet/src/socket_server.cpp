@@ -1,9 +1,3 @@
-/********************
- * Delevoped by Luiz Felipe
- * GitHub: https://github.com/Silva97
- *
- * Date: 02/17/2018
- ********************/
 #include <stdio.h>
 #include <sys/socket.h>
 #include <sys/types.h>
@@ -14,57 +8,85 @@
 #include <ros/ros.h>
 #include <std_msgs/String.h>
 
-using namespace std;
+#define Port 5000
+#define MaxClients 5
+class socket_server
+{
+    private:
+        char buff[4096];
+        int server, ret, client;
+        struct sockaddr_in server_addr, client_addr;
+
+    public:
+        int socket_server_setup(short porta, int MaxClient){
+            // create a socket
+            server = socket(AF_INET, SOCK_STREAM, 0);
+            // Verify if the socket was created
+            if (server < 0)
+            {
+                printf("[-]Error in connection with server.\n");
+                exit(1);
+            }
+            printf("[+]Server Socket is Created.\n.\n");
+            // Specify an address for the socket
+            memset(&server_addr, '\0', sizeof(server_addr));
+            server_addr.sin_family      = AF_INET;
+            server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+            server_addr.sin_port        = htons(porta);
+
+            // Verificar erro com connect
+            ret = bind(server, (struct sockaddr*) &server_addr, sizeof(server_addr));
+            if (ret < 0)
+            {
+                printf("[-]Error in binding.\n");
+                exit(1);
+            }
+            printf("[+]Bind to port %d.\n", porta);
+            if(listen(server, MaxClient) == 0){ printf("Listening....\n");}
+            else {printf("[-]Error in binding.\n");}
+            return server;
+        }
+        int socket_client_setup(int server_client){
+            pid_t childpid;
+            int csize  = sizeof(client_addr);
+            client = accept(server_client, (sockaddr*)&client_addr, (socklen_t*)&csize);
+            if (client < 0)
+                exit(1);
+            printf("connection accepted from %s:%d.\n", inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port));
+            if ((childpid = fork()) == 0){
+                close(server_client);
+                while (1)
+                {
+                    int recv_clinent = recv(client, buff, sizeof buff, 0);
+                    if (strcmp(buff, ":exit") == 0)
+                    {
+                        printf("connection accepted from %s:%d.\n", inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port));
+                        break;
+                    }
+                    else
+                    {
+                        printf("client: %s\n", buff);
+                        send(client, buff, strlen(buff), 0);
+                        bzero(buff, sizeof(buff));
+                    }
+                }
+            }
+            return client;
+        }
+};
 
 int main(int argc, char ** argv)
 {
-    // create a socket
-    int server = socket(AF_INET, SOCK_STREAM, 0);
+    int client;
+    socket_server teste;
 
-    // Specify an address for the socket
-    struct sockaddr_in saddr;
-        saddr.sin_family      = AF_INET;
-        saddr.sin_addr.s_addr = htonl(INADDR_ANY);
-        saddr.sin_port        = htons(5000);
-
-    // Verificar erro com connect
-
-    bind(server, (struct sockaddr*) &saddr, sizeof(saddr));
-
-    listen(server, 5);
-
-    sockaddr_in caddr;
-
-    int csize  = sizeof(struct sockaddr_in);
-
+    int server = teste.socket_server_setup(Port, MaxClients);
+    
     while(1){
-        int client;
-        client = accept(server, (sockaddr*)&caddr, (socklen_t*)&csize);
-
-        int recv_clinent;
-        char buff[4096]; 
-        recv_clinent = recv(client, buff, sizeof buff, 0);
-
-        if (recv_clinent == -1)
-		{
-			cerr << "Error in recv(). Quitting" << endl;
-			break;
-		}
-
-		if (recv_clinent == 0)
-		{
-			cout << "Client disconnected " << endl;
-			break;
-		}
-
-        send(client, buff, sizeof(recv_clinent), 0);
-
-        puts(buff);
+        client = teste.socket_client_setup(server);
 
         fflush(stdout);
-
-        close(client);
     }
-    
+    close(client);
     return 0;
 }

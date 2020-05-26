@@ -33,6 +33,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/apolinario/catkin_ventsup_ws/devel/share/beginner_tutorials/cmake/beginner_tutorials-msg-paths.cmake"
   "/home/apolinario/catkin_ventsup_ws/devel/share/ethernet/cmake/ethernetConfig-version.cmake"
   "/home/apolinario/catkin_ventsup_ws/devel/share/ethernet/cmake/ethernetConfig.cmake"
+  "/home/apolinario/catkin_ventsup_ws/devel/share/navegations/cmake/navegationsConfig-version.cmake"
+  "/home/apolinario/catkin_ventsup_ws/devel/share/navegations/cmake/navegationsConfig.cmake"
   "/home/apolinario/catkin_ventsup_ws/devel/share/serial/cmake/serialConfig-version.cmake"
   "/home/apolinario/catkin_ventsup_ws/devel/share/serial/cmake/serialConfig.cmake"
   "/home/apolinario/catkin_ventsup_ws/src/CMakeLists.txt"
@@ -313,6 +315,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "navegations/CMakeFiles/imu_node.dir/DependInfo.cmake"
   "navegations/CMakeFiles/status_device_node.dir/DependInfo.cmake"
   "navegations/CMakeFiles/gps_node.dir/DependInfo.cmake"
+  "navegations/CMakeFiles/planning.dir/DependInfo.cmake"
   "serie/CMakeFiles/read_rs232.dir/DependInfo.cmake"
   "serie/CMakeFiles/write_rs232.dir/DependInfo.cmake"
   )

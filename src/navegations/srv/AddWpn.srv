@@ -1,0 +1,6 @@
+Header header
+int8 num_WPn
+float32 lat
+float32 lng
+---
+string resultado 

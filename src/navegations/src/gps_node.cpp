@@ -73,8 +73,8 @@ class ReadGps{
               str_split[iter_split];
             }
             
-            msg_gps_lat << ReadGps::convert_decimal_to_degree({*(str_split.begin() + 1),*(str_split.begin() + 2)}, 0);
-            msg_gps_lng << ReadGps::convert_decimal_to_degree({*(str_split.begin() + 1),*(str_split.begin() + 2)}, 1);
+            msg_gps_lat << ReadGps::convert_decimal_to_degree({*(str_split.begin() + 1),*(str_split.begin() + 2)}, 0) << std::endl;
+            msg_gps_lng << ReadGps::convert_decimal_to_degree({*(str_split.begin() + 1),*(str_split.begin() + 2)}, 1) << std::endl;
 
             latitude.data = msg_gps_lat.str();
             longitude.data = msg_gps_lng.str();

@@ -130,10 +130,11 @@
 /home/apolinario/catkin_ventsup_ws/build/navegations/CMakeFiles/imu_node.dir
 /home/apolinario/catkin_ventsup_ws/build/navegations/CMakeFiles/status_device_node.dir
 /home/apolinario/catkin_ventsup_ws/build/navegations/CMakeFiles/gps_node.dir
+/home/apolinario/catkin_ventsup_ws/build/navegations/CMakeFiles/rebuild_cache.dir
+/home/apolinario/catkin_ventsup_ws/build/navegations/CMakeFiles/planning.dir
 /home/apolinario/catkin_ventsup_ws/build/navegations/CMakeFiles/install/local.dir
 /home/apolinario/catkin_ventsup_ws/build/navegations/CMakeFiles/test.dir
 /home/apolinario/catkin_ventsup_ws/build/navegations/CMakeFiles/edit_cache.dir
-/home/apolinario/catkin_ventsup_ws/build/navegations/CMakeFiles/rebuild_cache.dir
 /home/apolinario/catkin_ventsup_ws/build/serie/CMakeFiles/install/strip.dir
 /home/apolinario/catkin_ventsup_ws/build/serie/CMakeFiles/install.dir
 /home/apolinario/catkin_ventsup_ws/build/serie/CMakeFiles/read_rs232.dir
