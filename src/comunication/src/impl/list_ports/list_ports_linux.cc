@@ -291,7 +291,7 @@ usb_sysfs_hw_string(const string& sysfs_path)
 
     string pid = read_line( sysfs_path + "/idProduct" );
 
-    return format("USB VID:PID=%s:%s %s", vid.c_str(), pid.c_str(), serial_number.c_str() );
+    return format("VID:PID=%s:%s %s", vid.c_str(), pid.c_str(), serial_number.c_str() );
 }
 
 vector<PortInfo>

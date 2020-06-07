@@ -3,6 +3,7 @@
 #include "serial/serial.h"
 #include "ros/ros.h"
 #include "std_msgs/String.h"
+#include "jni.h"
 
 using std::string;
 
