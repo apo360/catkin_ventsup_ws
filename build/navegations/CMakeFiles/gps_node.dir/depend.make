@@ -59,6 +59,7 @@ navegations/CMakeFiles/gps_node.dir/src/gps_node.cpp.o: /opt/ros/melodic/include
 navegations/CMakeFiles/gps_node.dir/src/gps_node.cpp.o: /opt/ros/melodic/include/ros/wall_timer_options.h
 navegations/CMakeFiles/gps_node.dir/src/gps_node.cpp.o: /opt/ros/melodic/include/rosconsole/macros_generated.h
 navegations/CMakeFiles/gps_node.dir/src/gps_node.cpp.o: /opt/ros/melodic/include/std_msgs/Char.h
+navegations/CMakeFiles/gps_node.dir/src/gps_node.cpp.o: /opt/ros/melodic/include/std_msgs/Int32.h
 navegations/CMakeFiles/gps_node.dir/src/gps_node.cpp.o: /opt/ros/melodic/include/std_msgs/String.h
 navegations/CMakeFiles/gps_node.dir/src/gps_node.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
 navegations/CMakeFiles/gps_node.dir/src/gps_node.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h

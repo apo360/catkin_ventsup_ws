@@ -844,6 +844,32 @@ _run_tests_serial/fast:
 .PHONY : _run_tests_serial/fast
 
 #=============================================================================
+# Target rules for targets named lora
+
+# Build rule for target.
+lora: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lora
+.PHONY : lora
+
+# fast build rule for target.
+lora/fast:
+	$(MAKE) -f command_station/CMakeFiles/lora.dir/build.make command_station/CMakeFiles/lora.dir/build
+.PHONY : lora/fast
+
+#=============================================================================
+# Target rules for targets named lora_listen
+
+# Build rule for target.
+lora_listen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lora_listen
+.PHONY : lora_listen
+
+# fast build rule for target.
+lora_listen/fast:
+	$(MAKE) -f command_station/CMakeFiles/lora_listen.dir/build.make command_station/CMakeFiles/lora_listen.dir/build
+.PHONY : lora_listen/fast
+
+#=============================================================================
 # Target rules for targets named _catkin_empty_exported_target
 
 # Build rule for target.
@@ -1038,6 +1064,8 @@ help:
 	@echo "... serial-test-timer"
 	@echo "... run_tests_serial_gtest_serial-test-timer"
 	@echo "... _run_tests_serial"
+	@echo "... lora"
+	@echo "... lora_listen"
 	@echo "... _catkin_empty_exported_target"
 	@echo "... topic_lora_receiver"
 	@echo "... lora_send"

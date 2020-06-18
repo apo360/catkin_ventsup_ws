@@ -1,0 +1,8 @@
+<launch>
+    <!-- <machine /> -->
+
+    <!-- LoRa Comunication -->
+    <node pkg="command_station" type="lora" name="lora"/>
+    <node pkg="command_station" type="lora_listen" name="lora_listen"/>
+
+</launch>

@@ -1,0 +1,12 @@
+<launch>
+    <!-- <machine /> -->
+
+    <!-- Pakcage Serie -->
+    <node pkg="serie" type="read_rs232" name="read_rs232"/>
+
+    <!-- Pakcage Navigation -->
+    <node pkg="navegations" type="gps_node" name="gps"/>
+    <node pkg="navegations" type="imu_node" name="imu"/>
+
+
+</launch>

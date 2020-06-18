@@ -7,6 +7,7 @@
 #include "ros/ros.h"
 // aqui vou apenas incluir a Biblioteca de saida da mensagem
 #include "std_msgs/Int32.h"
+#include "std_msgs/String.h"
 
 // Agora começo com o corpo do c++
 
@@ -19,7 +20,7 @@ int main(int argc, char **argv){
 
     ros::init(argc, argv, "contar_talker"); // recomendar, que o nome do 'Node' seja o mesmo que do ficheiro
     ros::NodeHandle n; // Criamos um identificador
-    ros::Publisher pub_enviar = n.advertise<std_msgs::Int32>("contador",1000);
+    ros::Publisher pub_enviar = n.advertise<std_msgs::Int32>("contador_send",1000);
     ROS_INFO("Teste de contar");
     ros::Rate rate(1);
     int count = 0;
@@ -27,10 +28,12 @@ int main(int argc, char **argv){
     while(ros::ok()){
 
         std_msgs::Int32 msg;
-        msg.data = count;
 
-        pub_enviar.publish(msg);
-        count++;
+            pub_enviar.publish(msg);
+
+        //msg.data = count;
+
+        //count++;
         rate.sleep();
     }
 return 0;

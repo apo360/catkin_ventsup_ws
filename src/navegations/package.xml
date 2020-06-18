@@ -50,6 +50,7 @@
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>message_generation</build_depend>
+  <build_depend>launch</build_depend>
   <build_depend>ros_environment</build_depend>
   <build_depend>rosconsole</build_depend>
   <build_depend>roscpp</build_depend>

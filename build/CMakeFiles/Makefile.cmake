@@ -308,6 +308,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "serial/tests/CMakeFiles/serial-test-timer.dir/DependInfo.cmake"
   "serial/tests/CMakeFiles/run_tests_serial_gtest_serial-test-timer.dir/DependInfo.cmake"
   "serial/tests/CMakeFiles/_run_tests_serial.dir/DependInfo.cmake"
+  "command_station/CMakeFiles/lora.dir/DependInfo.cmake"
+  "command_station/CMakeFiles/lora_listen.dir/DependInfo.cmake"
   "command_station/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake"
   "comunication/CMakeFiles/topic_lora_receiver.dir/DependInfo.cmake"
   "comunication/CMakeFiles/lora_send.dir/DependInfo.cmake"

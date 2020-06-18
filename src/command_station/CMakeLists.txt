@@ -129,6 +129,14 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+add_executable(lora src/comunication/lora.cpp)
+target_link_libraries(lora ${catkin_LIBRARIES})
+add_dependencies(lora command_station_generate_messages_cpp)
+
+add_executable(lora_listen src/comunication/lora_listen.cpp)
+target_link_libraries(lora_listen ${catkin_LIBRARIES})
+add_dependencies(lora_listen command_station_generate_messages_cpp)
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/command_station.cpp

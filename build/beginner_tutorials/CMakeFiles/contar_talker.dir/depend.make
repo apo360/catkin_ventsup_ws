@@ -59,6 +59,7 @@ beginner_tutorials/CMakeFiles/contar_talker.dir/src/contar_talker.cpp.o: /opt/ro
 beginner_tutorials/CMakeFiles/contar_talker.dir/src/contar_talker.cpp.o: /opt/ros/melodic/include/ros/wall_timer_options.h
 beginner_tutorials/CMakeFiles/contar_talker.dir/src/contar_talker.cpp.o: /opt/ros/melodic/include/rosconsole/macros_generated.h
 beginner_tutorials/CMakeFiles/contar_talker.dir/src/contar_talker.cpp.o: /opt/ros/melodic/include/std_msgs/Int32.h
+beginner_tutorials/CMakeFiles/contar_talker.dir/src/contar_talker.cpp.o: /opt/ros/melodic/include/std_msgs/String.h
 beginner_tutorials/CMakeFiles/contar_talker.dir/src/contar_talker.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
 beginner_tutorials/CMakeFiles/contar_talker.dir/src/contar_talker.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
 

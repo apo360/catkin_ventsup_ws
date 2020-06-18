@@ -68,6 +68,39 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -91,27 +124,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -122,18 +134,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,36 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+command_station/CMakeFiles/lora.dir/rule:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f CMakeFiles/Makefile2 command_station/CMakeFiles/lora.dir/rule
+.PHONY : command_station/CMakeFiles/lora.dir/rule
+
+# Convenience name for target.
+lora: command_station/CMakeFiles/lora.dir/rule
+
+.PHONY : lora
+
+# fast build rule for target.
+lora/fast:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/lora.dir/build.make command_station/CMakeFiles/lora.dir/build
+.PHONY : lora/fast
+
+# Convenience name for target.
+command_station/CMakeFiles/lora_listen.dir/rule:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f CMakeFiles/Makefile2 command_station/CMakeFiles/lora_listen.dir/rule
+.PHONY : command_station/CMakeFiles/lora_listen.dir/rule
+
+# Convenience name for target.
+lora_listen: command_station/CMakeFiles/lora_listen.dir/rule
+
+.PHONY : lora_listen
+
+# fast build rule for target.
+lora_listen/fast:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/lora_listen.dir/build.make command_station/CMakeFiles/lora_listen.dir/build
+.PHONY : lora_listen/fast
+
+# Convenience name for target.
 command_station/CMakeFiles/_catkin_empty_exported_target.dir/rule:
 	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f CMakeFiles/Makefile2 command_station/CMakeFiles/_catkin_empty_exported_target.dir/rule
 .PHONY : command_station/CMakeFiles/_catkin_empty_exported_target.dir/rule
@@ -182,6 +212,60 @@ _catkin_empty_exported_target/fast:
 	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/_catkin_empty_exported_target.dir/build.make command_station/CMakeFiles/_catkin_empty_exported_target.dir/build
 .PHONY : _catkin_empty_exported_target/fast
 
+src/comunication/lora.o: src/comunication/lora.cpp.o
+
+.PHONY : src/comunication/lora.o
+
+# target to build an object file
+src/comunication/lora.cpp.o:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/lora.dir/build.make command_station/CMakeFiles/lora.dir/src/comunication/lora.cpp.o
+.PHONY : src/comunication/lora.cpp.o
+
+src/comunication/lora.i: src/comunication/lora.cpp.i
+
+.PHONY : src/comunication/lora.i
+
+# target to preprocess a source file
+src/comunication/lora.cpp.i:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/lora.dir/build.make command_station/CMakeFiles/lora.dir/src/comunication/lora.cpp.i
+.PHONY : src/comunication/lora.cpp.i
+
+src/comunication/lora.s: src/comunication/lora.cpp.s
+
+.PHONY : src/comunication/lora.s
+
+# target to generate assembly for a file
+src/comunication/lora.cpp.s:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/lora.dir/build.make command_station/CMakeFiles/lora.dir/src/comunication/lora.cpp.s
+.PHONY : src/comunication/lora.cpp.s
+
+src/comunication/lora_listen.o: src/comunication/lora_listen.cpp.o
+
+.PHONY : src/comunication/lora_listen.o
+
+# target to build an object file
+src/comunication/lora_listen.cpp.o:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/lora_listen.dir/build.make command_station/CMakeFiles/lora_listen.dir/src/comunication/lora_listen.cpp.o
+.PHONY : src/comunication/lora_listen.cpp.o
+
+src/comunication/lora_listen.i: src/comunication/lora_listen.cpp.i
+
+.PHONY : src/comunication/lora_listen.i
+
+# target to preprocess a source file
+src/comunication/lora_listen.cpp.i:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/lora_listen.dir/build.make command_station/CMakeFiles/lora_listen.dir/src/comunication/lora_listen.cpp.i
+.PHONY : src/comunication/lora_listen.cpp.i
+
+src/comunication/lora_listen.s: src/comunication/lora_listen.cpp.s
+
+.PHONY : src/comunication/lora_listen.s
+
+# target to generate assembly for a file
+src/comunication/lora_listen.cpp.s:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/lora_listen.dir/build.make command_station/CMakeFiles/lora_listen.dir/src/comunication/lora_listen.cpp.s
+.PHONY : src/comunication/lora_listen.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -189,13 +273,21 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
+	@echo "... install"
+	@echo "... list_install_components"
+	@echo "... lora"
+	@echo "... lora_listen"
+	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... list_install_components"
-	@echo "... edit_cache"
 	@echo "... _catkin_empty_exported_target"
 	@echo "... rebuild_cache"
-	@echo "... install"
+	@echo "... src/comunication/lora.o"
+	@echo "... src/comunication/lora.i"
+	@echo "... src/comunication/lora.s"
+	@echo "... src/comunication/lora_listen.o"
+	@echo "... src/comunication/lora_listen.i"
+	@echo "... src/comunication/lora_listen.s"
 .PHONY : help
 
 
