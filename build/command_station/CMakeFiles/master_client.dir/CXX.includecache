@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/apolinario/catkin_ventsup_ws/src/command_station/src/comunication/master_client.cpp
+iostream
+-
+string
+-
+stdio.h
+-
+sys/socket.h
+-
+sys/types.h
+-
+arpa/inet.h
+-
+unistd.h
+-
+netinet/in.h
+-
+

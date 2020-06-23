@@ -80,6 +80,16 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -113,16 +123,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -197,6 +197,21 @@ lora_send/fast:
 	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/lora_send.dir/build.make comunication/CMakeFiles/lora_send.dir/build
 .PHONY : lora_send/fast
 
+# Convenience name for target.
+comunication/CMakeFiles/master.dir/rule:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f CMakeFiles/Makefile2 comunication/CMakeFiles/master.dir/rule
+.PHONY : comunication/CMakeFiles/master.dir/rule
+
+# Convenience name for target.
+master: comunication/CMakeFiles/master.dir/rule
+
+.PHONY : master
+
+# fast build rule for target.
+master/fast:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/master.dir/build.make comunication/CMakeFiles/master.dir/build
+.PHONY : master/fast
+
 src/lora_send.o: src/lora_send.cpp.o
 
 .PHONY : src/lora_send.o
@@ -223,6 +238,33 @@ src/lora_send.s: src/lora_send.cpp.s
 src/lora_send.cpp.s:
 	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/lora_send.dir/build.make comunication/CMakeFiles/lora_send.dir/src/lora_send.cpp.s
 .PHONY : src/lora_send.cpp.s
+
+src/master.o: src/master.cpp.o
+
+.PHONY : src/master.o
+
+# target to build an object file
+src/master.cpp.o:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/master.dir/build.make comunication/CMakeFiles/master.dir/src/master.cpp.o
+.PHONY : src/master.cpp.o
+
+src/master.i: src/master.cpp.i
+
+.PHONY : src/master.i
+
+# target to preprocess a source file
+src/master.cpp.i:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/master.dir/build.make comunication/CMakeFiles/master.dir/src/master.cpp.i
+.PHONY : src/master.cpp.i
+
+src/master.s: src/master.cpp.s
+
+.PHONY : src/master.s
+
+# target to generate assembly for a file
+src/master.cpp.s:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/master.dir/build.make comunication/CMakeFiles/master.dir/src/master.cpp.s
+.PHONY : src/master.cpp.s
 
 src/topic_lora_receiver.o: src/topic_lora_receiver.cpp.o
 
@@ -259,16 +301,20 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... topic_lora_receiver"
 	@echo "... lora_send"
 	@echo "... rebuild_cache"
+	@echo "... master"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... list_install_components"
 	@echo "... edit_cache"
 	@echo "... src/lora_send.o"
 	@echo "... src/lora_send.i"
 	@echo "... src/lora_send.s"
+	@echo "... src/master.o"
+	@echo "... src/master.i"
+	@echo "... src/master.s"
 	@echo "... src/topic_lora_receiver.o"
 	@echo "... src/topic_lora_receiver.i"
 	@echo "... src/topic_lora_receiver.s"

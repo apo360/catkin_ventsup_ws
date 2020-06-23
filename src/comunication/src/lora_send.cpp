@@ -51,6 +51,7 @@ class ReadLora{
 int main(int argc, char **argv)
 {
     ros::init(argc, argv, "lora_send");
+    
     ros::NodeHandle nh;
 
     ReadLora lorass = ReadLora(&nh);

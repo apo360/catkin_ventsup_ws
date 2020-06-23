@@ -137,6 +137,14 @@ add_executable(lora_listen src/comunication/lora_listen.cpp)
 target_link_libraries(lora_listen ${catkin_LIBRARIES})
 add_dependencies(lora_listen command_station_generate_messages_cpp)
 
+add_executable(multimaster src/comunication/multimaster.cpp)
+target_link_libraries(multimaster ${catkin_LIBRARIES})
+add_dependencies(multimaster command_station_generate_messages_cpp)
+
+add_executable(master_client src/comunication/master_client.cpp)
+target_link_libraries(master_client ${catkin_LIBRARIES})
+add_dependencies(master_client command_station_generate_messages_cpp)
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/command_station.cpp

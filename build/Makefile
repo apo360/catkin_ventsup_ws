@@ -870,6 +870,19 @@ lora_listen/fast:
 .PHONY : lora_listen/fast
 
 #=============================================================================
+# Target rules for targets named multimaster
+
+# Build rule for target.
+multimaster: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 multimaster
+.PHONY : multimaster
+
+# fast build rule for target.
+multimaster/fast:
+	$(MAKE) -f command_station/CMakeFiles/multimaster.dir/build.make command_station/CMakeFiles/multimaster.dir/build
+.PHONY : multimaster/fast
+
+#=============================================================================
 # Target rules for targets named _catkin_empty_exported_target
 
 # Build rule for target.
@@ -881,6 +894,19 @@ _catkin_empty_exported_target: cmake_check_build_system
 _catkin_empty_exported_target/fast:
 	$(MAKE) -f command_station/CMakeFiles/_catkin_empty_exported_target.dir/build.make command_station/CMakeFiles/_catkin_empty_exported_target.dir/build
 .PHONY : _catkin_empty_exported_target/fast
+
+#=============================================================================
+# Target rules for targets named master_client
+
+# Build rule for target.
+master_client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 master_client
+.PHONY : master_client
+
+# fast build rule for target.
+master_client/fast:
+	$(MAKE) -f command_station/CMakeFiles/master_client.dir/build.make command_station/CMakeFiles/master_client.dir/build
+.PHONY : master_client/fast
 
 #=============================================================================
 # Target rules for targets named topic_lora_receiver
@@ -907,6 +933,19 @@ lora_send: cmake_check_build_system
 lora_send/fast:
 	$(MAKE) -f comunication/CMakeFiles/lora_send.dir/build.make comunication/CMakeFiles/lora_send.dir/build
 .PHONY : lora_send/fast
+
+#=============================================================================
+# Target rules for targets named master
+
+# Build rule for target.
+master: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 master
+.PHONY : master
+
+# fast build rule for target.
+master/fast:
+	$(MAKE) -f comunication/CMakeFiles/master.dir/build.make comunication/CMakeFiles/master.dir/build
+.PHONY : master/fast
 
 #=============================================================================
 # Target rules for targets named socket_server
@@ -1066,9 +1105,12 @@ help:
 	@echo "... _run_tests_serial"
 	@echo "... lora"
 	@echo "... lora_listen"
+	@echo "... multimaster"
 	@echo "... _catkin_empty_exported_target"
+	@echo "... master_client"
 	@echo "... topic_lora_receiver"
 	@echo "... lora_send"
+	@echo "... master"
 	@echo "... socket_server"
 	@echo "... imu_node"
 	@echo "... status_device_node"

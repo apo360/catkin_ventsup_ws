@@ -68,18 +68,6 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -100,6 +88,29 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -123,17 +134,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -198,6 +198,21 @@ lora_listen/fast:
 .PHONY : lora_listen/fast
 
 # Convenience name for target.
+command_station/CMakeFiles/multimaster.dir/rule:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f CMakeFiles/Makefile2 command_station/CMakeFiles/multimaster.dir/rule
+.PHONY : command_station/CMakeFiles/multimaster.dir/rule
+
+# Convenience name for target.
+multimaster: command_station/CMakeFiles/multimaster.dir/rule
+
+.PHONY : multimaster
+
+# fast build rule for target.
+multimaster/fast:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/multimaster.dir/build.make command_station/CMakeFiles/multimaster.dir/build
+.PHONY : multimaster/fast
+
+# Convenience name for target.
 command_station/CMakeFiles/_catkin_empty_exported_target.dir/rule:
 	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f CMakeFiles/Makefile2 command_station/CMakeFiles/_catkin_empty_exported_target.dir/rule
 .PHONY : command_station/CMakeFiles/_catkin_empty_exported_target.dir/rule
@@ -211,6 +226,21 @@ _catkin_empty_exported_target: command_station/CMakeFiles/_catkin_empty_exported
 _catkin_empty_exported_target/fast:
 	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/_catkin_empty_exported_target.dir/build.make command_station/CMakeFiles/_catkin_empty_exported_target.dir/build
 .PHONY : _catkin_empty_exported_target/fast
+
+# Convenience name for target.
+command_station/CMakeFiles/master_client.dir/rule:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f CMakeFiles/Makefile2 command_station/CMakeFiles/master_client.dir/rule
+.PHONY : command_station/CMakeFiles/master_client.dir/rule
+
+# Convenience name for target.
+master_client: command_station/CMakeFiles/master_client.dir/rule
+
+.PHONY : master_client
+
+# fast build rule for target.
+master_client/fast:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/master_client.dir/build.make command_station/CMakeFiles/master_client.dir/build
+.PHONY : master_client/fast
 
 src/comunication/lora.o: src/comunication/lora.cpp.o
 
@@ -266,6 +296,60 @@ src/comunication/lora_listen.cpp.s:
 	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/lora_listen.dir/build.make command_station/CMakeFiles/lora_listen.dir/src/comunication/lora_listen.cpp.s
 .PHONY : src/comunication/lora_listen.cpp.s
 
+src/comunication/master_client.o: src/comunication/master_client.cpp.o
+
+.PHONY : src/comunication/master_client.o
+
+# target to build an object file
+src/comunication/master_client.cpp.o:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/master_client.dir/build.make command_station/CMakeFiles/master_client.dir/src/comunication/master_client.cpp.o
+.PHONY : src/comunication/master_client.cpp.o
+
+src/comunication/master_client.i: src/comunication/master_client.cpp.i
+
+.PHONY : src/comunication/master_client.i
+
+# target to preprocess a source file
+src/comunication/master_client.cpp.i:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/master_client.dir/build.make command_station/CMakeFiles/master_client.dir/src/comunication/master_client.cpp.i
+.PHONY : src/comunication/master_client.cpp.i
+
+src/comunication/master_client.s: src/comunication/master_client.cpp.s
+
+.PHONY : src/comunication/master_client.s
+
+# target to generate assembly for a file
+src/comunication/master_client.cpp.s:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/master_client.dir/build.make command_station/CMakeFiles/master_client.dir/src/comunication/master_client.cpp.s
+.PHONY : src/comunication/master_client.cpp.s
+
+src/comunication/multimaster.o: src/comunication/multimaster.cpp.o
+
+.PHONY : src/comunication/multimaster.o
+
+# target to build an object file
+src/comunication/multimaster.cpp.o:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/multimaster.dir/build.make command_station/CMakeFiles/multimaster.dir/src/comunication/multimaster.cpp.o
+.PHONY : src/comunication/multimaster.cpp.o
+
+src/comunication/multimaster.i: src/comunication/multimaster.cpp.i
+
+.PHONY : src/comunication/multimaster.i
+
+# target to preprocess a source file
+src/comunication/multimaster.cpp.i:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/multimaster.dir/build.make command_station/CMakeFiles/multimaster.dir/src/comunication/multimaster.cpp.i
+.PHONY : src/comunication/multimaster.cpp.i
+
+src/comunication/multimaster.s: src/comunication/multimaster.cpp.s
+
+.PHONY : src/comunication/multimaster.s
+
+# target to generate assembly for a file
+src/comunication/multimaster.cpp.s:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/multimaster.dir/build.make command_station/CMakeFiles/multimaster.dir/src/comunication/multimaster.cpp.s
+.PHONY : src/comunication/multimaster.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -273,21 +357,29 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... edit_cache"
 	@echo "... lora"
 	@echo "... lora_listen"
-	@echo "... edit_cache"
+	@echo "... multimaster"
+	@echo "... rebuild_cache"
+	@echo "... _catkin_empty_exported_target"
+	@echo "... install"
+	@echo "... master_client"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... _catkin_empty_exported_target"
-	@echo "... rebuild_cache"
 	@echo "... src/comunication/lora.o"
 	@echo "... src/comunication/lora.i"
 	@echo "... src/comunication/lora.s"
 	@echo "... src/comunication/lora_listen.o"
 	@echo "... src/comunication/lora_listen.i"
 	@echo "... src/comunication/lora_listen.s"
+	@echo "... src/comunication/master_client.o"
+	@echo "... src/comunication/master_client.i"
+	@echo "... src/comunication/master_client.s"
+	@echo "... src/comunication/multimaster.o"
+	@echo "... src/comunication/multimaster.i"
+	@echo "... src/comunication/multimaster.s"
 .PHONY : help
 
 

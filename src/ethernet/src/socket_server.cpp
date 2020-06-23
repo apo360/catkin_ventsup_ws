@@ -7,9 +7,11 @@
 #include <netinet/in.h>
 #include <ros/ros.h>
 #include <std_msgs/String.h>
+#include "ros/master.h"
+#include "ros/xmlrpc_manager.h"
 
 #define Port 5000
-#define MaxClients 5
+#define MaxClients 10
 class socket_server
 {
     private:
@@ -60,7 +62,23 @@ class socket_server
                     int recv_clinent = recv(client, buff, sizeof buff, 0);
                     if (strcmp(buff, ":exit") == 0)
                     {
-                        printf("connection accepted from %s:%d.\n", inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port));
+                        printf("connection accepted form %s:%d.\n", inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port));
+                        break;
+                    }
+                    else if (strcmp(buff, "topics") == 0)
+                    {
+                        ros::master::V_TopicInfo master_topics;
+
+                        ros::master::getTopics(master_topics);
+
+                        ros::master::V_TopicInfo::iterator it;
+
+                        for (it = master_topics.begin(); it != master_topics.end(); it++) {
+                            const ros::master::TopicInfo& info = *it;
+                            strcpy(buff, info.name.c_str());
+                            send(client, buff, strlen(buff), 0);
+                            //std::cout << info.name << " " << info.datatype << std::endl;
+                        }
                         break;
                     }
                     else
@@ -77,6 +95,8 @@ class socket_server
 
 int main(int argc, char ** argv)
 {
+    ros::init(argc, argv, "socket_server");
+
     int client;
     socket_server teste;
 

@@ -30,7 +30,8 @@ class WritePort{
 
             while(ros::ok())
             {
-                usleep(5000);
+                usleep(7000);
+
                 std::string dados = "RPY/";
 
                 size_t enviar_port = my_serial.write(dados);
@@ -51,6 +52,7 @@ class WritePort{
                     }
                 }
                 ros::spinOnce();
+                //ros::topic::waitForMessage<>()
 
                 loop_rate.sleep();
             }

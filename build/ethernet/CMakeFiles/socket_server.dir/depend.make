@@ -57,8 +57,17 @@ ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/
 ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/include/ros/types.h
 ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/include/ros/wall_timer.h
 ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/include/ros/wall_timer_options.h
+ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/include/ros/xmlrpc_manager.h
 ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/include/rosconsole/macros_generated.h
 ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/include/std_msgs/String.h
+ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpc.h
+ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcClient.h
 ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
+ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcDispatch.h
+ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcException.h
+ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcServer.h
+ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcServerMethod.h
+ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcSource.h
+ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcUtil.h
 ethernet/CMakeFiles/socket_server.dir/src/socket_server.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
 

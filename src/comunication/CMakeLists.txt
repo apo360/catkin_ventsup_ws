@@ -129,6 +129,10 @@ add_executable(topic_lora_receiver src/topic_lora_receiver.cpp)
 target_link_libraries(topic_lora_receiver ${catkin_LIBRARIES})
 add_dependencies(topic_lora_receiver comunication_generate_messages_cpp)
 
+add_executable(master src/master.cpp)
+target_link_libraries(master ${catkin_LIBRARIES})
+add_dependencies(master comunication_generate_messages_cpp)
+
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
