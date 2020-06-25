@@ -30,6 +30,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "serial/catkin_generated/package.cmake"
   "serie/catkin_generated/ordered_paths.cmake"
   "serie/catkin_generated/package.cmake"
+  "supervisor/catkin_generated/ordered_paths.cmake"
+  "supervisor/catkin_generated/package.cmake"
   "/home/apolinario/catkin_ventsup_ws/devel/share/beginner_tutorials/cmake/beginner_tutorials-msg-paths.cmake"
   "/home/apolinario/catkin_ventsup_ws/devel/share/ethernet/cmake/ethernetConfig-version.cmake"
   "/home/apolinario/catkin_ventsup_ws/devel/share/ethernet/cmake/ethernetConfig.cmake"
@@ -53,6 +55,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/apolinario/catkin_ventsup_ws/src/serial/tests/CMakeLists.txt"
   "/home/apolinario/catkin_ventsup_ws/src/serie/CMakeLists.txt"
   "/home/apolinario/catkin_ventsup_ws/src/serie/package.xml"
+  "/home/apolinario/catkin_ventsup_ws/src/supervisor/CMakeLists.txt"
+  "/home/apolinario/catkin_ventsup_ws/src/supervisor/package.xml"
   "/opt/ros/melodic/share/catkin/cmake/../package.xml"
   "/opt/ros/melodic/share/catkin/cmake/all.cmake"
   "/opt/ros/melodic/share/catkin/cmake/assert.cmake"
@@ -252,6 +256,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "ethernet/CMakeFiles/CMakeDirectoryInformation.cmake"
   "navegations/CMakeFiles/CMakeDirectoryInformation.cmake"
   "serie/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "supervisor/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -313,9 +318,10 @@ set(CMAKE_DEPEND_INFO_FILES
   "command_station/CMakeFiles/multimaster.dir/DependInfo.cmake"
   "command_station/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake"
   "command_station/CMakeFiles/master_client.dir/DependInfo.cmake"
-  "comunication/CMakeFiles/topic_lora_receiver.dir/DependInfo.cmake"
+  "command_station/CMakeFiles/gest_comuni_estation_node.dir/DependInfo.cmake"
+  "comunication/CMakeFiles/gest_com.dir/DependInfo.cmake"
+  "comunication/CMakeFiles/wifi_master_server.dir/DependInfo.cmake"
   "comunication/CMakeFiles/lora_send.dir/DependInfo.cmake"
-  "comunication/CMakeFiles/master.dir/DependInfo.cmake"
   "ethernet/CMakeFiles/socket_server.dir/DependInfo.cmake"
   "navegations/CMakeFiles/imu_node.dir/DependInfo.cmake"
   "navegations/CMakeFiles/status_device_node.dir/DependInfo.cmake"
@@ -323,4 +329,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "navegations/CMakeFiles/planning.dir/DependInfo.cmake"
   "serie/CMakeFiles/read_rs232.dir/DependInfo.cmake"
   "serie/CMakeFiles/write_rs232.dir/DependInfo.cmake"
+  "supervisor/CMakeFiles/supervisor_node.dir/DependInfo.cmake"
   )

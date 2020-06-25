@@ -909,17 +909,43 @@ master_client/fast:
 .PHONY : master_client/fast
 
 #=============================================================================
-# Target rules for targets named topic_lora_receiver
+# Target rules for targets named gest_comuni_estation_node
 
 # Build rule for target.
-topic_lora_receiver: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 topic_lora_receiver
-.PHONY : topic_lora_receiver
+gest_comuni_estation_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gest_comuni_estation_node
+.PHONY : gest_comuni_estation_node
 
 # fast build rule for target.
-topic_lora_receiver/fast:
-	$(MAKE) -f comunication/CMakeFiles/topic_lora_receiver.dir/build.make comunication/CMakeFiles/topic_lora_receiver.dir/build
-.PHONY : topic_lora_receiver/fast
+gest_comuni_estation_node/fast:
+	$(MAKE) -f command_station/CMakeFiles/gest_comuni_estation_node.dir/build.make command_station/CMakeFiles/gest_comuni_estation_node.dir/build
+.PHONY : gest_comuni_estation_node/fast
+
+#=============================================================================
+# Target rules for targets named gest_com
+
+# Build rule for target.
+gest_com: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gest_com
+.PHONY : gest_com
+
+# fast build rule for target.
+gest_com/fast:
+	$(MAKE) -f comunication/CMakeFiles/gest_com.dir/build.make comunication/CMakeFiles/gest_com.dir/build
+.PHONY : gest_com/fast
+
+#=============================================================================
+# Target rules for targets named wifi_master_server
+
+# Build rule for target.
+wifi_master_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 wifi_master_server
+.PHONY : wifi_master_server
+
+# fast build rule for target.
+wifi_master_server/fast:
+	$(MAKE) -f comunication/CMakeFiles/wifi_master_server.dir/build.make comunication/CMakeFiles/wifi_master_server.dir/build
+.PHONY : wifi_master_server/fast
 
 #=============================================================================
 # Target rules for targets named lora_send
@@ -933,19 +959,6 @@ lora_send: cmake_check_build_system
 lora_send/fast:
 	$(MAKE) -f comunication/CMakeFiles/lora_send.dir/build.make comunication/CMakeFiles/lora_send.dir/build
 .PHONY : lora_send/fast
-
-#=============================================================================
-# Target rules for targets named master
-
-# Build rule for target.
-master: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 master
-.PHONY : master
-
-# fast build rule for target.
-master/fast:
-	$(MAKE) -f comunication/CMakeFiles/master.dir/build.make comunication/CMakeFiles/master.dir/build
-.PHONY : master/fast
 
 #=============================================================================
 # Target rules for targets named socket_server
@@ -1038,6 +1051,19 @@ write_rs232/fast:
 	$(MAKE) -f serie/CMakeFiles/write_rs232.dir/build.make serie/CMakeFiles/write_rs232.dir/build
 .PHONY : write_rs232/fast
 
+#=============================================================================
+# Target rules for targets named supervisor_node
+
+# Build rule for target.
+supervisor_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 supervisor_node
+.PHONY : supervisor_node
+
+# fast build rule for target.
+supervisor_node/fast:
+	$(MAKE) -f supervisor/CMakeFiles/supervisor_node.dir/build.make supervisor/CMakeFiles/supervisor_node.dir/build
+.PHONY : supervisor_node/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1108,9 +1134,10 @@ help:
 	@echo "... multimaster"
 	@echo "... _catkin_empty_exported_target"
 	@echo "... master_client"
-	@echo "... topic_lora_receiver"
+	@echo "... gest_comuni_estation_node"
+	@echo "... gest_com"
+	@echo "... wifi_master_server"
 	@echo "... lora_send"
-	@echo "... master"
 	@echo "... socket_server"
 	@echo "... imu_node"
 	@echo "... status_device_node"
@@ -1118,6 +1145,7 @@ help:
 	@echo "... planning"
 	@echo "... read_rs232"
 	@echo "... write_rs232"
+	@echo "... supervisor_node"
 .PHONY : help
 
 

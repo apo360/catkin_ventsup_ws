@@ -16,15 +16,24 @@ class ReadLora{
     private:
     std_msgs::String sslora;
     std::stringstream msg_lora;
-    ros::Publisher Lora_Send;
-    ros::Subscriber GetLora;
+    ros::Publisher Lora_Send, lora_out;
+    ros::Subscriber GetLora, GetGest;
 
     public:
 
         ReadLora(ros::NodeHandle *nh){
-            Lora_Send = nh->advertise<std_msgs::String>("lora_sender", 1000);
+            Lora_Send = nh->advertise<std_msgs::String>("/lora_send", 1000);
+
+            lora_out = nh->advertise<std_msgs::String>("/lora_out", 1000);
+
             GetLora = nh->subscribe("/rs232_out", 1000, &ReadLora::LoraCallback, this);
+
+            GetGest = nh->subscribe("/gest_send", 1000, &ReadLora::GestCallback, this);
         }
+
+        void GestCallback(const std_msgs::String::ConstPtr& msg){
+            ROS_INFO(" I heard: [%s]", msg->data.c_str());
+        };
 
         void LoraCallback(const std_msgs::String::ConstPtr& loradate){
 

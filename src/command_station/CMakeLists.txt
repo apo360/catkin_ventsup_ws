@@ -145,6 +145,10 @@ add_executable(master_client src/comunication/master_client.cpp)
 target_link_libraries(master_client ${catkin_LIBRARIES})
 add_dependencies(master_client command_station_generate_messages_cpp)
 
+add_executable(gest_comuni_estation_node src/comunication/gest_comuni_estation_node.cpp)
+target_link_libraries(gest_comuni_estation_node ${catkin_LIBRARIES})
+add_dependencies(gest_comuni_estation_node command_station_generate_messages_cpp)
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/command_station.cpp

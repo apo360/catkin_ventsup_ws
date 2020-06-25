@@ -138,6 +138,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/apolinario/catkin_ventsup_ws/build/ethernet/cmake_install.cmake")
   include("/home/apolinario/catkin_ventsup_ws/build/navegations/cmake_install.cmake")
   include("/home/apolinario/catkin_ventsup_ws/build/serie/cmake_install.cmake")
+  include("/home/apolinario/catkin_ventsup_ws/build/supervisor/cmake_install.cmake")
 
 endif()
 

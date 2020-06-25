@@ -125,13 +125,13 @@ add_executable(lora_send src/lora_send.cpp)
 target_link_libraries(lora_send ${catkin_LIBRARIES})
 add_dependencies(lora_send comunication_generate_messages_cpp)
 
-add_executable(topic_lora_receiver src/topic_lora_receiver.cpp)
-target_link_libraries(topic_lora_receiver ${catkin_LIBRARIES})
-add_dependencies(topic_lora_receiver comunication_generate_messages_cpp)
+add_executable(gest_com src/gest_com.cpp)
+target_link_libraries(gest_com ${catkin_LIBRARIES})
+add_dependencies(gest_com comunication_generate_messages_cpp)
 
-add_executable(master src/master.cpp)
-target_link_libraries(master ${catkin_LIBRARIES})
-add_dependencies(master comunication_generate_messages_cpp)
+add_executable(wifi_master_server src/wifi_master_server.cpp)
+target_link_libraries(wifi_master_server ${catkin_LIBRARIES})
+add_dependencies(wifi_master_server comunication_generate_messages_cpp)
 
 
 ## Declare a C++ library

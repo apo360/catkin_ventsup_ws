@@ -40,12 +40,12 @@ class socket_server
             ret = bind(server, (struct sockaddr*) &server_addr, sizeof(server_addr));
             if (ret < 0)
             {
-                printf("[-]Error in binding.\n");
+                ROS_ERROR("[-]Error in binding.\n");
                 exit(1);
             }
             printf("[+]Bind to port %d.\n", porta);
             if(listen(server, MaxClient) == 0){ printf("Listening....\n");}
-            else {printf("[-]Error in binding.\n");}
+            else {ROS_ERROR("[-]Error in binding.\n");}
             return server;
         }
         int socket_client_setup(int server_client){
@@ -62,7 +62,7 @@ class socket_server
                     int recv_clinent = recv(client, buff, sizeof buff, 0);
                     if (strcmp(buff, ":exit") == 0)
                     {
-                        printf("connection accepted form %s:%d.\n", inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port));
+                        ROS_ERROR("connection accepted form %s:%d.\n", inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port));
                         break;
                     }
                     else if (strcmp(buff, "topics") == 0)
@@ -75,9 +75,12 @@ class socket_server
 
                         for (it = master_topics.begin(); it != master_topics.end(); it++) {
                             const ros::master::TopicInfo& info = *it;
-                            strcpy(buff, info.name.c_str());
-                            send(client, buff, strlen(buff), 0);
-                            //std::cout << info.name << " " << info.datatype << std::endl;
+                            if(info.name.substr(1,6) == "rosout"){
+                                std::cout << info.name << " " << std::endl;
+                                strcpy(buff, info.name.c_str());
+                                send(client, buff, strlen(buff), 0);
+                                bzero(buff, sizeof(buff));
+                            }    
                         }
                         break;
                     }
@@ -95,9 +98,14 @@ class socket_server
 
 int main(int argc, char ** argv)
 {
-    ros::init(argc, argv, "socket_server");
+    ros::init(argc, argv, "wifi_master_server");
+
+    ros::NodeHandle nh;
+
+    ros::Publisher pub_wifi = nh.advertise<std_msgs::String>("wifi_send", 1000);
 
     int client;
+    
     socket_server teste;
 
     int server = teste.socket_server_setup(Port, MaxClients);

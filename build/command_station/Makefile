@@ -78,6 +78,29 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -111,29 +134,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -241,6 +241,48 @@ master_client: command_station/CMakeFiles/master_client.dir/rule
 master_client/fast:
 	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/master_client.dir/build.make command_station/CMakeFiles/master_client.dir/build
 .PHONY : master_client/fast
+
+# Convenience name for target.
+command_station/CMakeFiles/gest_comuni_estation_node.dir/rule:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f CMakeFiles/Makefile2 command_station/CMakeFiles/gest_comuni_estation_node.dir/rule
+.PHONY : command_station/CMakeFiles/gest_comuni_estation_node.dir/rule
+
+# Convenience name for target.
+gest_comuni_estation_node: command_station/CMakeFiles/gest_comuni_estation_node.dir/rule
+
+.PHONY : gest_comuni_estation_node
+
+# fast build rule for target.
+gest_comuni_estation_node/fast:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/gest_comuni_estation_node.dir/build.make command_station/CMakeFiles/gest_comuni_estation_node.dir/build
+.PHONY : gest_comuni_estation_node/fast
+
+src/comunication/gest_comuni_estation_node.o: src/comunication/gest_comuni_estation_node.cpp.o
+
+.PHONY : src/comunication/gest_comuni_estation_node.o
+
+# target to build an object file
+src/comunication/gest_comuni_estation_node.cpp.o:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/gest_comuni_estation_node.dir/build.make command_station/CMakeFiles/gest_comuni_estation_node.dir/src/comunication/gest_comuni_estation_node.cpp.o
+.PHONY : src/comunication/gest_comuni_estation_node.cpp.o
+
+src/comunication/gest_comuni_estation_node.i: src/comunication/gest_comuni_estation_node.cpp.i
+
+.PHONY : src/comunication/gest_comuni_estation_node.i
+
+# target to preprocess a source file
+src/comunication/gest_comuni_estation_node.cpp.i:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/gest_comuni_estation_node.dir/build.make command_station/CMakeFiles/gest_comuni_estation_node.dir/src/comunication/gest_comuni_estation_node.cpp.i
+.PHONY : src/comunication/gest_comuni_estation_node.cpp.i
+
+src/comunication/gest_comuni_estation_node.s: src/comunication/gest_comuni_estation_node.cpp.s
+
+.PHONY : src/comunication/gest_comuni_estation_node.s
+
+# target to generate assembly for a file
+src/comunication/gest_comuni_estation_node.cpp.s:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f command_station/CMakeFiles/gest_comuni_estation_node.dir/build.make command_station/CMakeFiles/gest_comuni_estation_node.dir/src/comunication/gest_comuni_estation_node.cpp.s
+.PHONY : src/comunication/gest_comuni_estation_node.cpp.s
 
 src/comunication/lora.o: src/comunication/lora.cpp.o
 
@@ -358,6 +400,8 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... list_install_components"
+	@echo "... install/local"
+	@echo "... test"
 	@echo "... edit_cache"
 	@echo "... lora"
 	@echo "... lora_listen"
@@ -366,8 +410,10 @@ help:
 	@echo "... _catkin_empty_exported_target"
 	@echo "... install"
 	@echo "... master_client"
-	@echo "... install/local"
-	@echo "... test"
+	@echo "... gest_comuni_estation_node"
+	@echo "... src/comunication/gest_comuni_estation_node.o"
+	@echo "... src/comunication/gest_comuni_estation_node.i"
+	@echo "... src/comunication/gest_comuni_estation_node.s"
 	@echo "... src/comunication/lora.o"
 	@echo "... src/comunication/lora.i"
 	@echo "... src/comunication/lora.s"

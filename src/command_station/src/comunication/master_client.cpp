@@ -6,6 +6,9 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <netinet/in.h>
+#include <ros/ros.h>
+#include <ros/exceptions.h>
+#include <std_msgs/String.h>
 
 using namespace std;
 
@@ -13,7 +16,13 @@ int server, sendResult;
 
 int main(int argc, char ** argv)
 {
-	string ipAddress = "127.0.0.1";			// IP Address of the server
+    ros::init(argc, argv, "master_client");
+
+	ros::NodeHandle nh;
+
+	std_msgs::StringConstPtr dados = ros::topic::waitForMessage<std_msgs::String>("/teste_comuni", nh);
+
+	string ipAddress = dados->data.c_str();		// IP Address of the server
 	int port = 5000;						// Listening port # on the server
 
 	// Create socket
@@ -21,7 +30,7 @@ int main(int argc, char ** argv)
 	// Verify if the socket was created
     if (server < 0)
     {
-        printf("[-]Error in connection with server.\n");
+        ROS_ERROR("[-]Error in connection with %s.\n", ipAddress.c_str());
         exit(1);
     }
 
@@ -35,7 +44,7 @@ int main(int argc, char ** argv)
 	int connResult = connect(server, (sockaddr*)&hint, sizeof(hint));
 	if (connResult < 0)
 	{
-		cerr << "Can't connect to server, Err #" << endl;
+        ROS_ERROR("[-]Error: Can't connect to %s.\n", ipAddress.c_str());
 		exit(1);
 	}
 
@@ -56,12 +65,12 @@ int main(int argc, char ** argv)
 			if (sendResult != 0)
 			{
 				// Wait for response
-				//ZeroMemory(buf, 4096);
-				int bytesReceived = recv(server, buf, 4096, 0);
+				bzero(buf, 4096);
+				int bytesReceived = read(server, buf, 4096);
 				if (bytesReceived > 0)
 				{
 					// Echo response to console
-					cout << "SERVER> " << string(buf, 0, bytesReceived) << endl;
+					cout << "Vent-Sup --> " << string(buf, 1, bytesReceived) << endl;
 				}
 			}
 		}
@@ -69,5 +78,6 @@ int main(int argc, char ** argv)
 	} while (userInput.size() > 0);
 
 	// Gracefully close down everything
-    close(sendResult);
+    close(server);
+	return 0;
 }

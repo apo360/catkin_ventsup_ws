@@ -5,8 +5,17 @@
     <node pkg="serie" type="read_rs232" name="read_rs232"/>
 
     <!-- Pakcage Navigation -->
-    <node pkg="navegations" type="gps_node" name="gps"/>
-    <node pkg="navegations" type="imu_node" name="imu"/>
+    <node pkg="navegations" type="gps_node" name="gps_node"/>
+    <node pkg="navegations" type="imu_node" name="imu_node"/>
+    <node pkg="navegations" type="navigation_node" name="navigation_node"/>
+
+    <!-- Pakcage Comunication -->
+    <node pkg="comunication" type="lora_send" name="lora_node"/>
+    <node pkg="comunication" type="wifi_master_server" name="wifi_master_node"/>
+    <node pkg="comunication" type="gest_com" name="gest_com_node"/>
+
+    <!-- Pakcage Supervisor -->
+    <node pkg="supervisor" type="supervisor_node" name="supervisor_node"/>
 
 
 </launch>

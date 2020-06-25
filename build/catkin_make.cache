@@ -1,2 +1,2 @@
-beginner_tutorials:command_station:comunication:ethernet:navegations:serial:serie
+beginner_tutorials:command_station:comunication:ethernet:navegations:serial:serie:supervisor
 -DCATKIN_DEVEL_PREFIX=/home/apolinario/catkin_ventsup_ws/devel -DCMAKE_INSTALL_PREFIX=/home/apolinario/catkin_ventsup_ws/install -G Unix Makefiles

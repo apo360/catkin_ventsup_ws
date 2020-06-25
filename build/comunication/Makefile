@@ -168,19 +168,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-comunication/CMakeFiles/topic_lora_receiver.dir/rule:
-	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f CMakeFiles/Makefile2 comunication/CMakeFiles/topic_lora_receiver.dir/rule
-.PHONY : comunication/CMakeFiles/topic_lora_receiver.dir/rule
+comunication/CMakeFiles/gest_com.dir/rule:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f CMakeFiles/Makefile2 comunication/CMakeFiles/gest_com.dir/rule
+.PHONY : comunication/CMakeFiles/gest_com.dir/rule
 
 # Convenience name for target.
-topic_lora_receiver: comunication/CMakeFiles/topic_lora_receiver.dir/rule
+gest_com: comunication/CMakeFiles/gest_com.dir/rule
 
-.PHONY : topic_lora_receiver
+.PHONY : gest_com
 
 # fast build rule for target.
-topic_lora_receiver/fast:
-	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/topic_lora_receiver.dir/build.make comunication/CMakeFiles/topic_lora_receiver.dir/build
-.PHONY : topic_lora_receiver/fast
+gest_com/fast:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/gest_com.dir/build.make comunication/CMakeFiles/gest_com.dir/build
+.PHONY : gest_com/fast
+
+# Convenience name for target.
+comunication/CMakeFiles/wifi_master_server.dir/rule:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f CMakeFiles/Makefile2 comunication/CMakeFiles/wifi_master_server.dir/rule
+.PHONY : comunication/CMakeFiles/wifi_master_server.dir/rule
+
+# Convenience name for target.
+wifi_master_server: comunication/CMakeFiles/wifi_master_server.dir/rule
+
+.PHONY : wifi_master_server
+
+# fast build rule for target.
+wifi_master_server/fast:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/wifi_master_server.dir/build.make comunication/CMakeFiles/wifi_master_server.dir/build
+.PHONY : wifi_master_server/fast
 
 # Convenience name for target.
 comunication/CMakeFiles/lora_send.dir/rule:
@@ -197,20 +212,32 @@ lora_send/fast:
 	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/lora_send.dir/build.make comunication/CMakeFiles/lora_send.dir/build
 .PHONY : lora_send/fast
 
-# Convenience name for target.
-comunication/CMakeFiles/master.dir/rule:
-	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f CMakeFiles/Makefile2 comunication/CMakeFiles/master.dir/rule
-.PHONY : comunication/CMakeFiles/master.dir/rule
+src/gest_com.o: src/gest_com.cpp.o
 
-# Convenience name for target.
-master: comunication/CMakeFiles/master.dir/rule
+.PHONY : src/gest_com.o
 
-.PHONY : master
+# target to build an object file
+src/gest_com.cpp.o:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/gest_com.dir/build.make comunication/CMakeFiles/gest_com.dir/src/gest_com.cpp.o
+.PHONY : src/gest_com.cpp.o
 
-# fast build rule for target.
-master/fast:
-	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/master.dir/build.make comunication/CMakeFiles/master.dir/build
-.PHONY : master/fast
+src/gest_com.i: src/gest_com.cpp.i
+
+.PHONY : src/gest_com.i
+
+# target to preprocess a source file
+src/gest_com.cpp.i:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/gest_com.dir/build.make comunication/CMakeFiles/gest_com.dir/src/gest_com.cpp.i
+.PHONY : src/gest_com.cpp.i
+
+src/gest_com.s: src/gest_com.cpp.s
+
+.PHONY : src/gest_com.s
+
+# target to generate assembly for a file
+src/gest_com.cpp.s:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/gest_com.dir/build.make comunication/CMakeFiles/gest_com.dir/src/gest_com.cpp.s
+.PHONY : src/gest_com.cpp.s
 
 src/lora_send.o: src/lora_send.cpp.o
 
@@ -239,59 +266,32 @@ src/lora_send.cpp.s:
 	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/lora_send.dir/build.make comunication/CMakeFiles/lora_send.dir/src/lora_send.cpp.s
 .PHONY : src/lora_send.cpp.s
 
-src/master.o: src/master.cpp.o
+src/wifi_master_server.o: src/wifi_master_server.cpp.o
 
-.PHONY : src/master.o
-
-# target to build an object file
-src/master.cpp.o:
-	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/master.dir/build.make comunication/CMakeFiles/master.dir/src/master.cpp.o
-.PHONY : src/master.cpp.o
-
-src/master.i: src/master.cpp.i
-
-.PHONY : src/master.i
-
-# target to preprocess a source file
-src/master.cpp.i:
-	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/master.dir/build.make comunication/CMakeFiles/master.dir/src/master.cpp.i
-.PHONY : src/master.cpp.i
-
-src/master.s: src/master.cpp.s
-
-.PHONY : src/master.s
-
-# target to generate assembly for a file
-src/master.cpp.s:
-	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/master.dir/build.make comunication/CMakeFiles/master.dir/src/master.cpp.s
-.PHONY : src/master.cpp.s
-
-src/topic_lora_receiver.o: src/topic_lora_receiver.cpp.o
-
-.PHONY : src/topic_lora_receiver.o
+.PHONY : src/wifi_master_server.o
 
 # target to build an object file
-src/topic_lora_receiver.cpp.o:
-	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/topic_lora_receiver.dir/build.make comunication/CMakeFiles/topic_lora_receiver.dir/src/topic_lora_receiver.cpp.o
-.PHONY : src/topic_lora_receiver.cpp.o
+src/wifi_master_server.cpp.o:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/wifi_master_server.dir/build.make comunication/CMakeFiles/wifi_master_server.dir/src/wifi_master_server.cpp.o
+.PHONY : src/wifi_master_server.cpp.o
 
-src/topic_lora_receiver.i: src/topic_lora_receiver.cpp.i
+src/wifi_master_server.i: src/wifi_master_server.cpp.i
 
-.PHONY : src/topic_lora_receiver.i
+.PHONY : src/wifi_master_server.i
 
 # target to preprocess a source file
-src/topic_lora_receiver.cpp.i:
-	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/topic_lora_receiver.dir/build.make comunication/CMakeFiles/topic_lora_receiver.dir/src/topic_lora_receiver.cpp.i
-.PHONY : src/topic_lora_receiver.cpp.i
+src/wifi_master_server.cpp.i:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/wifi_master_server.dir/build.make comunication/CMakeFiles/wifi_master_server.dir/src/wifi_master_server.cpp.i
+.PHONY : src/wifi_master_server.cpp.i
 
-src/topic_lora_receiver.s: src/topic_lora_receiver.cpp.s
+src/wifi_master_server.s: src/wifi_master_server.cpp.s
 
-.PHONY : src/topic_lora_receiver.s
+.PHONY : src/wifi_master_server.s
 
 # target to generate assembly for a file
-src/topic_lora_receiver.cpp.s:
-	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/topic_lora_receiver.dir/build.make comunication/CMakeFiles/topic_lora_receiver.dir/src/topic_lora_receiver.cpp.s
-.PHONY : src/topic_lora_receiver.cpp.s
+src/wifi_master_server.cpp.s:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f comunication/CMakeFiles/wifi_master_server.dir/build.make comunication/CMakeFiles/wifi_master_server.dir/src/wifi_master_server.cpp.s
+.PHONY : src/wifi_master_server.cpp.s
 
 # Help Target
 help:
@@ -302,22 +302,22 @@ help:
 	@echo "... install/strip"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... topic_lora_receiver"
+	@echo "... gest_com"
+	@echo "... wifi_master_server"
 	@echo "... lora_send"
 	@echo "... rebuild_cache"
-	@echo "... master"
 	@echo "... install/local"
 	@echo "... test"
 	@echo "... edit_cache"
+	@echo "... src/gest_com.o"
+	@echo "... src/gest_com.i"
+	@echo "... src/gest_com.s"
 	@echo "... src/lora_send.o"
 	@echo "... src/lora_send.i"
 	@echo "... src/lora_send.s"
-	@echo "... src/master.o"
-	@echo "... src/master.i"
-	@echo "... src/master.s"
-	@echo "... src/topic_lora_receiver.o"
-	@echo "... src/topic_lora_receiver.i"
-	@echo "... src/topic_lora_receiver.s"
+	@echo "... src/wifi_master_server.o"
+	@echo "... src/wifi_master_server.i"
+	@echo "... src/wifi_master_server.s"
 .PHONY : help
 
 
