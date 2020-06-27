@@ -147,6 +147,10 @@ add_executable(planning src/planning.cpp)
 target_link_libraries(planning ${catkin_LIBRARIES})
 add_dependencies(planning navegations_generate_messages_cpp)
 
+add_executable(navigation_node src/navigation_node.cpp)
+target_link_libraries(navigation_node ${catkin_LIBRARIES})
+add_dependencies(navigation_node navegations_generate_messages_cpp)
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/navegations.cpp

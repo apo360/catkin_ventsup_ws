@@ -22,7 +22,7 @@ class WritePort{
         WritePort(ros::NodeHandle *nh){
             std::string name;
 
-            rs232_out = nh->advertise<std_msgs::String>("/rs232_out", 2000);
+            rs232_out = nh->advertise<std_msgs::String>("/rs232_out", 500);
 
             ROS_INFO("A escrever na porta RS232 ... ");
 
@@ -52,7 +52,6 @@ class WritePort{
                     }
                 }
                 ros::spinOnce();
-                //ros::topic::waitForMessage<>()
 
                 loop_rate.sleep();
             }

@@ -1026,6 +1026,19 @@ planning/fast:
 .PHONY : planning/fast
 
 #=============================================================================
+# Target rules for targets named navigation_node
+
+# Build rule for target.
+navigation_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 navigation_node
+.PHONY : navigation_node
+
+# fast build rule for target.
+navigation_node/fast:
+	$(MAKE) -f navegations/CMakeFiles/navigation_node.dir/build.make navegations/CMakeFiles/navigation_node.dir/build
+.PHONY : navigation_node/fast
+
+#=============================================================================
 # Target rules for targets named read_rs232
 
 # Build rule for target.
@@ -1052,6 +1065,19 @@ write_rs232/fast:
 .PHONY : write_rs232/fast
 
 #=============================================================================
+# Target rules for targets named supervisor_generate_messages_eus
+
+# Build rule for target.
+supervisor_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 supervisor_generate_messages_eus
+.PHONY : supervisor_generate_messages_eus
+
+# fast build rule for target.
+supervisor_generate_messages_eus/fast:
+	$(MAKE) -f supervisor/CMakeFiles/supervisor_generate_messages_eus.dir/build.make supervisor/CMakeFiles/supervisor_generate_messages_eus.dir/build
+.PHONY : supervisor_generate_messages_eus/fast
+
+#=============================================================================
 # Target rules for targets named supervisor_node
 
 # Build rule for target.
@@ -1063,6 +1089,175 @@ supervisor_node: cmake_check_build_system
 supervisor_node/fast:
 	$(MAKE) -f supervisor/CMakeFiles/supervisor_node.dir/build.make supervisor/CMakeFiles/supervisor_node.dir/build
 .PHONY : supervisor_node/fast
+
+#=============================================================================
+# Target rules for targets named supervisor_gencpp
+
+# Build rule for target.
+supervisor_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 supervisor_gencpp
+.PHONY : supervisor_gencpp
+
+# fast build rule for target.
+supervisor_gencpp/fast:
+	$(MAKE) -f supervisor/CMakeFiles/supervisor_gencpp.dir/build.make supervisor/CMakeFiles/supervisor_gencpp.dir/build
+.PHONY : supervisor_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named supervisor_generate_messages
+
+# Build rule for target.
+supervisor_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 supervisor_generate_messages
+.PHONY : supervisor_generate_messages
+
+# fast build rule for target.
+supervisor_generate_messages/fast:
+	$(MAKE) -f supervisor/CMakeFiles/supervisor_generate_messages.dir/build.make supervisor/CMakeFiles/supervisor_generate_messages.dir/build
+.PHONY : supervisor_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named _supervisor_generate_messages_check_deps_imgData
+
+# Build rule for target.
+_supervisor_generate_messages_check_deps_imgData: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _supervisor_generate_messages_check_deps_imgData
+.PHONY : _supervisor_generate_messages_check_deps_imgData
+
+# fast build rule for target.
+_supervisor_generate_messages_check_deps_imgData/fast:
+	$(MAKE) -f supervisor/CMakeFiles/_supervisor_generate_messages_check_deps_imgData.dir/build.make supervisor/CMakeFiles/_supervisor_generate_messages_check_deps_imgData.dir/build
+.PHONY : _supervisor_generate_messages_check_deps_imgData/fast
+
+#=============================================================================
+# Target rules for targets named supervisor_geneus
+
+# Build rule for target.
+supervisor_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 supervisor_geneus
+.PHONY : supervisor_geneus
+
+# fast build rule for target.
+supervisor_geneus/fast:
+	$(MAKE) -f supervisor/CMakeFiles/supervisor_geneus.dir/build.make supervisor/CMakeFiles/supervisor_geneus.dir/build
+.PHONY : supervisor_geneus/fast
+
+#=============================================================================
+# Target rules for targets named supervisor_generate_messages_cpp
+
+# Build rule for target.
+supervisor_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 supervisor_generate_messages_cpp
+.PHONY : supervisor_generate_messages_cpp
+
+# fast build rule for target.
+supervisor_generate_messages_cpp/fast:
+	$(MAKE) -f supervisor/CMakeFiles/supervisor_generate_messages_cpp.dir/build.make supervisor/CMakeFiles/supervisor_generate_messages_cpp.dir/build
+.PHONY : supervisor_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named _supervisor_generate_messages_check_deps_imgDataArray
+
+# Build rule for target.
+_supervisor_generate_messages_check_deps_imgDataArray: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _supervisor_generate_messages_check_deps_imgDataArray
+.PHONY : _supervisor_generate_messages_check_deps_imgDataArray
+
+# fast build rule for target.
+_supervisor_generate_messages_check_deps_imgDataArray/fast:
+	$(MAKE) -f supervisor/CMakeFiles/_supervisor_generate_messages_check_deps_imgDataArray.dir/build.make supervisor/CMakeFiles/_supervisor_generate_messages_check_deps_imgDataArray.dir/build
+.PHONY : _supervisor_generate_messages_check_deps_imgDataArray/fast
+
+#=============================================================================
+# Target rules for targets named supervisor_generate_messages_lisp
+
+# Build rule for target.
+supervisor_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 supervisor_generate_messages_lisp
+.PHONY : supervisor_generate_messages_lisp
+
+# fast build rule for target.
+supervisor_generate_messages_lisp/fast:
+	$(MAKE) -f supervisor/CMakeFiles/supervisor_generate_messages_lisp.dir/build.make supervisor/CMakeFiles/supervisor_generate_messages_lisp.dir/build
+.PHONY : supervisor_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named supervisor_genlisp
+
+# Build rule for target.
+supervisor_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 supervisor_genlisp
+.PHONY : supervisor_genlisp
+
+# fast build rule for target.
+supervisor_genlisp/fast:
+	$(MAKE) -f supervisor/CMakeFiles/supervisor_genlisp.dir/build.make supervisor/CMakeFiles/supervisor_genlisp.dir/build
+.PHONY : supervisor_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named supervisor_generate_messages_nodejs
+
+# Build rule for target.
+supervisor_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 supervisor_generate_messages_nodejs
+.PHONY : supervisor_generate_messages_nodejs
+
+# fast build rule for target.
+supervisor_generate_messages_nodejs/fast:
+	$(MAKE) -f supervisor/CMakeFiles/supervisor_generate_messages_nodejs.dir/build.make supervisor/CMakeFiles/supervisor_generate_messages_nodejs.dir/build
+.PHONY : supervisor_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named supervisor_gennodejs
+
+# Build rule for target.
+supervisor_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 supervisor_gennodejs
+.PHONY : supervisor_gennodejs
+
+# fast build rule for target.
+supervisor_gennodejs/fast:
+	$(MAKE) -f supervisor/CMakeFiles/supervisor_gennodejs.dir/build.make supervisor/CMakeFiles/supervisor_gennodejs.dir/build
+.PHONY : supervisor_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named supervisor_generate_messages_py
+
+# Build rule for target.
+supervisor_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 supervisor_generate_messages_py
+.PHONY : supervisor_generate_messages_py
+
+# fast build rule for target.
+supervisor_generate_messages_py/fast:
+	$(MAKE) -f supervisor/CMakeFiles/supervisor_generate_messages_py.dir/build.make supervisor/CMakeFiles/supervisor_generate_messages_py.dir/build
+.PHONY : supervisor_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named tes
+
+# Build rule for target.
+tes: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tes
+.PHONY : tes
+
+# fast build rule for target.
+tes/fast:
+	$(MAKE) -f supervisor/CMakeFiles/tes.dir/build.make supervisor/CMakeFiles/tes.dir/build
+.PHONY : tes/fast
+
+#=============================================================================
+# Target rules for targets named supervisor_genpy
+
+# Build rule for target.
+supervisor_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 supervisor_genpy
+.PHONY : supervisor_genpy
+
+# fast build rule for target.
+supervisor_genpy/fast:
+	$(MAKE) -f supervisor/CMakeFiles/supervisor_genpy.dir/build.make supervisor/CMakeFiles/supervisor_genpy.dir/build
+.PHONY : supervisor_genpy/fast
 
 # Help Target
 help:
@@ -1143,9 +1338,24 @@ help:
 	@echo "... status_device_node"
 	@echo "... gps_node"
 	@echo "... planning"
+	@echo "... navigation_node"
 	@echo "... read_rs232"
 	@echo "... write_rs232"
+	@echo "... supervisor_generate_messages_eus"
 	@echo "... supervisor_node"
+	@echo "... supervisor_gencpp"
+	@echo "... supervisor_generate_messages"
+	@echo "... _supervisor_generate_messages_check_deps_imgData"
+	@echo "... supervisor_geneus"
+	@echo "... supervisor_generate_messages_cpp"
+	@echo "... _supervisor_generate_messages_check_deps_imgDataArray"
+	@echo "... supervisor_generate_messages_lisp"
+	@echo "... supervisor_genlisp"
+	@echo "... supervisor_generate_messages_nodejs"
+	@echo "... supervisor_gennodejs"
+	@echo "... supervisor_generate_messages_py"
+	@echo "... tes"
+	@echo "... supervisor_genpy"
 .PHONY : help
 
 

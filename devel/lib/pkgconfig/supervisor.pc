@@ -3,6 +3,6 @@ prefix=/home/apolinario/catkin_ventsup_ws/devel
 Name: supervisor
 Description: Description of supervisor
 Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
+Cflags: -I/home/apolinario/catkin_ventsup_ws/devel/include -I/home/apolinario/catkin_ventsup_ws/src/supervisor/include
+Libs: -L${prefix}/lib -lsupervisor
+Requires: roscpp rosgraph rospy rostime serial std_msgs message_generation message_runtime std_msgs

@@ -15,7 +15,7 @@
     <node pkg="comunication" type="gest_com" name="gest_com_node"/>
 
     <!-- Pakcage Supervisor -->
-    <node pkg="supervisor" type="supervisor_node" name="supervisor_node"/>
+    <!-- <node pkg="supervisor" type="supervisor_node" name="supervisor_node"/> -->
 
 
 </launch>

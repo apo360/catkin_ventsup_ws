@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /home/apolinario/catkin_ventsup_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -90,6 +78,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -100,6 +99,18 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -123,17 +134,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -227,6 +227,21 @@ planning/fast:
 	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f navegations/CMakeFiles/planning.dir/build.make navegations/CMakeFiles/planning.dir/build
 .PHONY : planning/fast
 
+# Convenience name for target.
+navegations/CMakeFiles/navigation_node.dir/rule:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navegations/CMakeFiles/navigation_node.dir/rule
+.PHONY : navegations/CMakeFiles/navigation_node.dir/rule
+
+# Convenience name for target.
+navigation_node: navegations/CMakeFiles/navigation_node.dir/rule
+
+.PHONY : navigation_node
+
+# fast build rule for target.
+navigation_node/fast:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f navegations/CMakeFiles/navigation_node.dir/build.make navegations/CMakeFiles/navigation_node.dir/build
+.PHONY : navigation_node/fast
+
 src/gps_node.o: src/gps_node.cpp.o
 
 .PHONY : src/gps_node.o
@@ -280,6 +295,33 @@ src/imu_node.s: src/imu_node.cpp.s
 src/imu_node.cpp.s:
 	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f navegations/CMakeFiles/imu_node.dir/build.make navegations/CMakeFiles/imu_node.dir/src/imu_node.cpp.s
 .PHONY : src/imu_node.cpp.s
+
+src/navigation_node.o: src/navigation_node.cpp.o
+
+.PHONY : src/navigation_node.o
+
+# target to build an object file
+src/navigation_node.cpp.o:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f navegations/CMakeFiles/navigation_node.dir/build.make navegations/CMakeFiles/navigation_node.dir/src/navigation_node.cpp.o
+.PHONY : src/navigation_node.cpp.o
+
+src/navigation_node.i: src/navigation_node.cpp.i
+
+.PHONY : src/navigation_node.i
+
+# target to preprocess a source file
+src/navigation_node.cpp.i:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f navegations/CMakeFiles/navigation_node.dir/build.make navegations/CMakeFiles/navigation_node.dir/src/navigation_node.cpp.i
+.PHONY : src/navigation_node.cpp.i
+
+src/navigation_node.s: src/navigation_node.cpp.s
+
+.PHONY : src/navigation_node.s
+
+# target to generate assembly for a file
+src/navigation_node.cpp.s:
+	cd /home/apolinario/catkin_ventsup_ws/build && $(MAKE) -f navegations/CMakeFiles/navigation_node.dir/build.make navegations/CMakeFiles/navigation_node.dir/src/navigation_node.cpp.s
+.PHONY : src/navigation_node.cpp.s
 
 src/planning.o: src/planning.cpp.o
 
@@ -341,23 +383,27 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
 	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... edit_cache"
 	@echo "... imu_node"
 	@echo "... status_device_node"
 	@echo "... gps_node"
 	@echo "... rebuild_cache"
 	@echo "... planning"
+	@echo "... install/strip"
+	@echo "... navigation_node"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... edit_cache"
 	@echo "... src/gps_node.o"
 	@echo "... src/gps_node.i"
 	@echo "... src/gps_node.s"
 	@echo "... src/imu_node.o"
 	@echo "... src/imu_node.i"
 	@echo "... src/imu_node.s"
+	@echo "... src/navigation_node.o"
+	@echo "... src/navigation_node.i"
+	@echo "... src/navigation_node.s"
 	@echo "... src/planning.o"
 	@echo "... src/planning.i"
 	@echo "... src/planning.s"

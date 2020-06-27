@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/apolinario/catkin_ventsup_ws/src/navegations/src/GPS.h
-Arduino.h
-/home/apolinario/catkin_ventsup_ws/src/navegations/src/Arduino.h
-string.h
-/home/apolinario/catkin_ventsup_ws/src/navegations/src/string.h
-limits.h
--
-
 /home/apolinario/catkin_ventsup_ws/src/navegations/src/planning.cpp
 iostream
 -
@@ -23,8 +15,6 @@ ros/ros.h
 /home/apolinario/catkin_ventsup_ws/src/navegations/src/ros/ros.h
 std_msgs/String.h
 /home/apolinario/catkin_ventsup_ws/src/navegations/src/std_msgs/String.h
-GPS.h
-/home/apolinario/catkin_ventsup_ws/src/navegations/src/GPS.h
 boost/algorithm/string.hpp
 -
 math.h

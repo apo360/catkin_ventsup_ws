@@ -14,6 +14,8 @@ find_package(catkin REQUIRED COMPONENTS
   rostime
   serial
   std_msgs
+  message_generation
+  message_runtime
 )
 
 ## System dependencies are found with CMake's conventions
@@ -50,11 +52,11 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+add_message_files(
+  FILES
+  imgData.msg
+  imgDataArray.msg
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -71,10 +73,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs supervisor
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -106,10 +108,11 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES supervisor
-#  CATKIN_DEPENDS roscpp rosgraph rospy rostime serial std_msgs
-#  DEPENDS system_lib
+  INCLUDE_DIRS include
+  LIBRARIES supervisor
+  CATKIN_DEPENDS roscpp rosgraph rospy rostime serial std_msgs message_generation message_runtime
+  DEPENDS system_lib std_msgs
+
 )
 
 ###########
@@ -131,6 +134,10 @@ include_directories(
 add_executable(supervisor_node src/supervisor_node.cpp)
 target_link_libraries(supervisor_node ${catkin_LIBRARIES})
 add_dependencies(supervisor_node comunication_generate_messages_cpp)
+
+add_executable(tes src/tes.cpp)
+target_link_libraries(tes ${catkin_LIBRARIES})
+add_dependencies(tes comunication_generate_messages_cpp)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
