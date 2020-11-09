@@ -17,24 +17,38 @@ class ReadLora{
     std_msgs::String sslora;
     std::stringstream msg_lora;
     ros::Publisher Lora_Send, lora_out;
-    ros::Subscriber GetLora, GetGest;
+    ros::Subscriber GetLora, GetGestCom;
 
     public:
 
         ReadLora(ros::NodeHandle *nh){
-            Lora_Send = nh->advertise<std_msgs::String>("/lora_send", 1000);
-
-            lora_out = nh->advertise<std_msgs::String>("/lora_out", 1000);
-
+            Lora_Send = nh->advertise<std_msgs::String>("/lora_send", 10); //Tópico que envia os dados para o nó RS232
+            lora_out = nh->advertise<std_msgs::String>("/lora_out", 10);
             GetLora = nh->subscribe("/rs232_out", 1000, &ReadLora::LoraCallback, this);
-
-            GetGest = nh->subscribe("/gest_send", 1000, &ReadLora::GestCallback, this);
+            GetGestCom = nh->subscribe("/gest_send", 10, &ReadLora::G_ComunicCallback, this);
         }
 
-        void GestCallback(const std_msgs::String::ConstPtr& msg){
-            ROS_INFO(" I heard: [%s]", msg->data.c_str());
-        };
-
+        void G_ComunicCallback(const std_msgs::String::ConstPtr& comunicdate){
+            //Lora_Send.publish("A");
+            //ROS_INFO("%s", comunicdate->data.c_str());
+            /* int count = 0;
+            ros::Rate rate(5);
+            while (ros::ok())
+            {
+                std_msgs::String ola;
+                ola.data = std::to_string(count);
+                Lora_Send.publish(ola);
+                count++;
+                rate.sleep();
+            } */
+            ROS_INFO("%s", comunicdate->data.c_str());
+            ros::Rate rate(5);
+            std::stringstream teste(comunicdate->data.c_str());
+            std_msgs::String ola;
+            ola.data = teste.str();
+            Lora_Send.publish(ola);
+            rate.sleep();
+        }
         void LoraCallback(const std_msgs::String::ConstPtr& loradate){
 
             std::string loras;

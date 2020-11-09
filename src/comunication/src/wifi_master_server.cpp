@@ -24,13 +24,12 @@ class socket_server
         int socket_server_setup(short porta, int MaxClient){
             // create a socket
             server = socket(AF_INET, SOCK_STREAM, 0);
+            
             // Verify if the socket was created
-            if (server < 0)
-            {
-                printf("[-]Error in connection with server.\n");
-                exit(1);
-            }
+            if (server < 0) {printf("[-]Error in connection with server.\n"); exit(1);}
+
             printf("[+]Server Socket is Created.\n.\n");
+
             // Specify an address for the socket
             memset(&server_addr, '\0', sizeof(server_addr));
             server_addr.sin_family      = AF_INET;
@@ -56,16 +55,7 @@ class socket_server
             if (client < 0)
                 exit(1);
             printf("connection accepted from %s:%d.\n", inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port));
-            // listar os topicos estabelecidos
-            ros::master::V_TopicInfo master_topics;
-            ros::master::getTopics(master_topics);
-            ros::master::V_TopicInfo::iterator it;
-            for (it = master_topics.begin(); it != master_topics.end(); it++) {
-                const ros::master::TopicInfo& info = *it;
-                strcpy(char_topicos, info.name.c_str()+'\n');
-                send(client, char_topicos, strlen(char_topicos), 0);
-                bzero(char_topicos, sizeof(char_topicos));
-            }
+            
             if ((childpid = fork()) == 0){
                 close(server_client);
                 while (1)

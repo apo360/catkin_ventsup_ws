@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(navegations)
+project(control_supply)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-add_compile_options(-std=c++11)
+# add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -10,22 +10,11 @@ add_compile_options(-std=c++11)
 find_package(catkin REQUIRED COMPONENTS
   message_generation
   message_runtime
-  ros_environment
-  rosconsole
   roscpp
-  roscpp_serialization
-  rosgraph
-  roslib
-  rospack
   rospy
   rostime
-  serial
   std_msgs
-)
-
-## Sources
-set(serial_SRCS
-    include/navegations/navegation.h
+  serial
 )
 
 ## System dependencies are found with CMake's conventions
@@ -69,10 +58,11 @@ set(serial_SRCS
 # )
 
 ## Generate services in the 'srv' folder
-   add_service_files(
-    FILES
-    AddWpn.srv
-   )
+# add_service_files(
+#   FILES
+#   Service1.srv
+#   Service2.srv
+# )
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -118,8 +108,8 @@ set(serial_SRCS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES navegations
-#  CATKIN_DEPENDS ethernet message_generation message_runtime ros_environment rosconsole roscpp roscpp_serialization rosgraph roslib rospack rospy rostime serial std_msgs
+#  LIBRARIES control_supply
+#  CATKIN_DEPENDS launch message_generation message_runtime roscpp rospy rostime std_msgs
 #  DEPENDS system_lib
 )
 
@@ -134,32 +124,17 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(gps_node src/gps_node.cpp)
-target_link_libraries(gps_node ${catkin_LIBRARIES})
-add_dependencies(gps_node navegations_generate_messages_cpp)
+add_executable(control_node src/control_node.cpp)
+target_link_libraries(control_node ${catkin_LIBRARIES})
+add_dependencies(control_node control_supply_generate_messages_cpp)
 
-add_executable(imu_node src/imu_node.cpp)
-target_link_libraries(imu_node ${catkin_LIBRARIES})
-add_dependencies(imu_node navegations_generate_messages_cpp)
-
-add_executable(status_device_node src/status_device_node.cpp)
-target_link_libraries(status_device_node ${catkin_LIBRARIES})
-add_dependencies(status_device_node navegations_generate_messages_cpp)
-
-add_executable(planning src/planning.cpp)
-target_link_libraries(planning ${catkin_LIBRARIES})
-add_dependencies(planning navegations_generate_messages_cpp)
-
-add_executable(navigation_node src/navigation_node.cpp)
-target_link_libraries(navigation_node ${catkin_LIBRARIES})
-add_dependencies(navigation_node navegations_generate_messages_cpp)
-
-## Include headers
-include_directories(include)
+add_executable(supply_node src/supply_node.cpp)
+target_link_libraries(supply_node ${catkin_LIBRARIES})
+add_dependencies(supply_node control_supply_generate_messages_cpp)
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/navegations.cpp
+#   src/${PROJECT_NAME}/control_supply.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -170,7 +145,7 @@ include_directories(include)
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/navegations_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/control_supply_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -196,7 +171,7 @@ include_directories(include)
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-# install(PROGRAMS
+# catkin_install_python(PROGRAMS
 #   scripts/my_python_script
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
@@ -229,16 +204,12 @@ include_directories(include)
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
 
-## Install headers
-install(FILES include/navegations/navegation.h
-  DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}/navegations)
-
 #############
 ## Testing ##
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_navegations.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_control_supply.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

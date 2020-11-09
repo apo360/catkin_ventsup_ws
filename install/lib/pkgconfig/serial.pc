@@ -1,4 +1,4 @@
-prefix=/home/apolinario/catkin_ventsup_ws/install
+prefix=/home/ventsup/catkin_ventsup/install
 
 Name: serial
 Description: Description of serial
